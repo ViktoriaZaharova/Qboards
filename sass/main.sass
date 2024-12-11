@@ -95,10 +95,190 @@
   font-family: $default-font
 
 #chartdiv
-  height: 527px
+  height: 438px
 
 #chartdiv2
   height: 488px
 
 #chartdiv3
   height: 544px
+
+.filter-wrapper
+  width: 100%
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+
+.filter-box-period
+  color: $blue
+  position: relative
+  z-index: 1
+  svg
+    fill: $blue
+    width: 16px
+    height: 18px
+    min-width: 16px
+    position: absolute
+    right: 20px
+    top: 50%
+    transform: translate(0,-50%)
+
+.datepicker
+  padding: 20px
+  border-radius: 20px
+  background: #EAF3FF
+  color: $blue
+  &::placeholder
+    color: $blue
+
+.filter-box
+  display: flex
+  align-items: center
+  font-size: 16px
+  margin: 0 30px 30px 0
+  &:last-child
+    margin-right: 0
+  .dropdown
+    margin-left: 8px
+  p
+    color: $blue
+
+.dt-search
+  display: flex
+  align-items: center
+  position: relative
+  z-index: 1
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    transform: translate(0,-50%)
+    right: 20px
+    width: 21px
+    height: 20px
+    background: url('../img/search-icon.svg') no-repeat center
+    background-size: 100%
+  label
+    margin: 0
+  input
+    margin: 0
+    background: $blue-focus
+    height: 60px
+    border: none
+    border-radius: 20px
+    font-size: 16px
+    font-family: $default-font
+    color: $black
+    padding: 0 40px 0 20px
+    width: 222px
+    &:hover, &:focus
+      box-shadow: none
+      background: $blue-focus
+      color: $black
+
+div.dt-container div.dt-search input
+  margin: 0
+  width: 222px
+
+.table-striped
+  font-size: 20px
+  font-family: $default-font
+  thead
+    font-weight: bold
+    th
+      padding: 22px 0
+    tr
+      border-bottom: 1px solid #6DABFF
+  tbody
+    tr
+      border-bottom: 1px solid #6DABFF
+    td
+      padding: 11.5px 10px
+      text-align: left
+
+table.table.dataTable.table-striped > tbody > tr:nth-of-type(2n+1) > *
+      box-shadow: none
+
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date
+  text-align: left
+
+table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc
+  padding: 22px 10px
+
+.dt-column-order
+  width: 15px
+  height: 10px
+  background: url('../img/arrow-select.svg') no-repeat center
+  background-size: 100%
+  margin: 0 0 0 8px
+  position: relative
+  &::before, &::after
+    display: none
+
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order, table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order
+  position: relative
+  margin: 0 0 0 8px
+  display: inline-flex
+  align-items: center
+  width: 15px
+  height: 10px
+  min-width: 15px
+  right: 0
+
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:before
+  display: none
+
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:after, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order:after, table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order:before, table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order:after, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:after, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order:before, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order:after
+  display: none
+
+table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > tr > th.dt-orderable-desc:hover, table.dataTable thead > tr > td.dt-orderable-asc:hover, table.dataTable thead > tr > td.dt-orderable-desc:hover
+  outline: none
+  outline-offset: 0
+
+.table>:not(caption)>*>*
+  box-shadow: none
+  background: transparent
+
+tfoot
+  font-weight: bold
+  border: none
+  box-shadow: none
+  // th
+  //   border-top: 1px solid #6DABFF
+
+div.dt-container div.dt-length
+  font-size: 16px
+  font-family: $default-font
+  color: $blue
+  select
+    border: none
+    border-radius: 20px
+    background: #fff url('../img/arrow-select.svg') no-repeat calc( 100% - 20px ) center
+    background-size: 15px
+    font-size: 16px
+    font-family: $default-font
+    margin: 0 8px
+    width: 91px
+    padding: 0 20px
+    color: $black
+    &:hover, &:focus
+      box-shadow: none
+      outline: none
+
+.dt-scroll-body
+  padding: 0 33px 0 40px
+  &::-webkit-scrollbar
+    width: 20px
+    border-radius: 20px
+    background: #FBFCFF
+  &::-webkit-scrollbar-thumb
+    border-radius: 20px
+    background-color: #EAF3FF
+    // outline: 1px solid slategrey
+
+
+div.dt-scroll-body
+  border: none
+
+.dt-scroll-foot, .dt-scroll-head
+  padding: 0 45px 0 40px

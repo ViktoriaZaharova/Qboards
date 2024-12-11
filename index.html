@@ -12,6 +12,8 @@
 
   <!-- add plugins css -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
   <!-- add plugins css end -->
 
   <link rel="stylesheet" href="css/style.css">
@@ -103,10 +105,11 @@
                 <div class="col-12">
                   <div class="filter-wrapper">
                     <div class="filter-box filter-box-period">
-                      <p>Выбор периода</p>
+                      <input type="text" class="datepicker1 datepicker" placeholder="Выбор периода">
                       <svg class="svg-icon">
-                        <use xlink:href="img/sprite.svg#calendar"></use>
+                        <use xlink:href="img/sprite.svg#calendar-icon"></use>
                       </svg>
+
                     </div>
 
                     <div class="filter-box">
@@ -239,7 +242,136 @@
                   </div>
                 </div>
                 <div class="col-12 col-lg-5 mb-55">
-                  <div class="content-box content-box-table"></div>
+                  <div class="content-box content-box-table">
+                    <table id="example-table2" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Currency</th>
+                          <th>Balance</th>
+                          <th>Balance USD</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1" checked>
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">ETH</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">BTC</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">USDT</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">SOL</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">BNB</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">RUR</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">DOGE</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">BNB</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">RUR</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="label-checkbox label-checkbox-table">
+                              <input type="checkbox" name="checkbox-table1">
+                              <span class="label-checkbox__custom"></span>
+                              <span class="label-checkbox__text">DOGE</span>
+                            </label>
+                          </td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>итого</th>
+                          <th></th>
+                          <th>8355</th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
                 </div>
                 <div class="col-12">
                   <div class="content-box">
@@ -279,8 +411,8 @@
                           </div>
                         </div>
                       </div>
-  
-  
+
+
                       <div class="filter-box">
                         <p>Биржа</p>
                         <div class="dropdown dropdown-filter">
@@ -339,7 +471,7 @@
                           </div>
                         </div>
                       </div>
-  
+
                       <div class="filter-box">
                         <p>Валюта</p>
                         <div class="dropdown dropdown-filter">
@@ -374,6 +506,81 @@
                     <div id="chartdiv3" class="chartdiv"></div>
 
                   </div>
+
+                  <div class="content-box">
+                    <table id="example-table1" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Exch</th>
+                          <th>Time</th>
+                          <th>Client</th>
+                          <th>Amount</th>
+                          <th>Currency</th>
+                          <th>Соглашение</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>ETH</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                          <td>ETH</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>BTC</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                          <td>BTC</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>USDT</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                          <td>USDT</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>SOL</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                          <td>SOL</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>BNB</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                          <td>BNB</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>RUR</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                          <td>RUR</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+                        <tr>
+                          <td>DOGE</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                          <td>DOGE</td>
+                          <td>0,323</td>
+                          <td>1344</td>
+                        </tr>
+
+                      </tbody>
+
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -393,6 +600,9 @@
   <script src="https://cdn.amcharts.com/lib/5/locales/ru_RU.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
   <!-- add plugins js end-->
 
   <script src="js/common.js"></script>

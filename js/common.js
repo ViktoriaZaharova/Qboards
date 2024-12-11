@@ -12,7 +12,7 @@ am5.ready(function () {
   // Set themes
   // https://www.amcharts.com/docs/v5/concepts/themes/
   root.setThemes([
-    am5themes_Animated.new(root)
+    am5themes_Animated.new(root),
   ]);
 
 
@@ -165,9 +165,9 @@ am5.ready(function () {
 
   // Add scrollbar
   // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
-  chart.set("scrollbarX", am5.Scrollbar.new(root, {
-    orientation: "horizontal"
-  }));
+  // chart.set("scrollbarX", am5.Scrollbar.new(root, {
+  //   orientation: "horizontal"
+  // }));
 
   // DRAGGABLE RANGE
   // add series range
@@ -300,18 +300,18 @@ am5.ready(function () {
 
 // chartdiv3
 
-am5.ready(function() {
+am5.ready(function () {
 
   // Create root element
   // https://www.amcharts.com/docs/v5/getting-started/#Root_element
   var root = am5.Root.new("chartdiv3");
-  
+
   const myTheme = am5.Theme.new(root);
-  
+
   myTheme.rule("AxisLabel", ["minor"]).setAll({
-    dy:1
+    dy: 1
   });
-  
+
   // Set themes
   // https://www.amcharts.com/docs/v5/concepts/themes/
   root.setThemes([
@@ -319,8 +319,8 @@ am5.ready(function() {
     myTheme,
     am5themes_Responsive.new(root)
   ]);
-  
-  
+
+
   // Create chart
   // https://www.amcharts.com/docs/v5/charts/xy-chart/
   var chart = root.container.children.push(am5xy.XYChart.new(root, {
@@ -328,21 +328,21 @@ am5.ready(function() {
     panY: false,
     wheelX: "panX",
     wheelY: "zoomX",
-    paddingLeft:0
+    paddingLeft: 0
   }));
-  
-  
+
+
   // Add cursor
   // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
   var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
     behavior: "zoomX"
   }));
   cursor.lineY.set("visible", false);
-  
+
   var date = new Date();
   date.setHours(0, 0, 0, 0);
   var value = 100;
-  
+
   function generateData() {
     value = Math.round((Math.random() * 10 - 5) + value);
     am5.time.add(date, "day", 1);
@@ -351,7 +351,7 @@ am5.ready(function() {
       value: value
     };
   }
-  
+
   function generateDatas(count) {
     var data = [];
     for (var i = 0; i < count; ++i) {
@@ -359,8 +359,8 @@ am5.ready(function() {
     }
     return data;
   }
-  
-  
+
+
   // Create axes
   // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
   var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
@@ -370,23 +370,23 @@ am5.ready(function() {
       count: 1
     },
     renderer: am5xy.AxisRendererX.new(root, {
-      minorGridEnabled:true,
-      minorLabelsEnabled:true
+      minorGridEnabled: true,
+      minorLabelsEnabled: true
     }),
     tooltip: am5.Tooltip.new(root, {})
   }));
-  
+
   xAxis.set("minorDateFormats", {
-    "day":"dd",
-    "month":"MM"
+    "day": "dd",
+    "month": "MM"
   });
-  
-  
+
+
   var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
     renderer: am5xy.AxisRendererY.new(root, {})
   }));
-  
-  
+
+
   // Add series
   // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
   var series = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -399,23 +399,86 @@ am5.ready(function() {
       labelText: "{valueY}"
     })
   }));
-  
+
   series.columns.template.setAll({ strokeOpacity: 0 })
-  
-  
+
+
   // Add scrollbar
   // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
-  chart.set("scrollbarX", am5.Scrollbar.new(root, {
-    orientation: "horizontal"
-  }));
-  
+  // chart.set("scrollbarX", am5.Scrollbar.new(root, {
+  //   orientation: "horizontal"
+  // }));
+
   var data = generateDatas(30);
   series.data.setAll(data);
-  
-  
+
+
   // Make stuff animate on load
   // https://www.amcharts.com/docs/v5/concepts/animations/
   series.appear(1000);
   chart.appear(1000, 100);
-  
-  }); // end am5.ready()
+
+}); // end am5.ready()
+
+
+$('#example-table1').DataTable({
+  select: true,
+  info: false,
+  language: {
+    search: '',
+    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/ru.json'
+  },
+  order: {
+    idx: 2,
+    dir: 'asc'
+  },
+  layout: {
+    topStart: 'pageLength',
+    topEnd: {
+      search: {
+        placeholder: 'Поиск'
+      }
+    },
+    bottomStart: '',
+    bottomEnd: ''
+  }
+});
+$('#example-table2').DataTable({
+  select: false,
+  info: false,
+  language: {
+    search: '',
+    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/ru.json'
+  },
+  ordering: false,
+  layout: false,
+  paging: false,
+  scrollCollapse: true,
+    scrollY: '340px'
+});
+
+// calendar
+$(function () {
+  //Сменим язык календаря на русский
+  $.datepicker.setDefaults(
+    {
+      closeText: 'Закрыть',
+      prevText: '',
+      currentText: 'Сегодня',
+      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+        'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн',
+        'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+      dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
+      dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+      dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      weekHeader: 'Не',
+      dateFormat: 'dd.mm.yy',
+      firstDay: 1,
+      isRTL: false,
+      showMonthAfterYear: false,
+      yearSuffix: ''
+    });
+
+});
+$(".datepicker1").datepicker();

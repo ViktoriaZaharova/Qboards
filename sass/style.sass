@@ -68,23 +68,22 @@ input, textarea, select
   outline: none
   box-shadow: none
   appearance: none
-  padding: 0 15px
-  box-sizing: border-box
-  font-family: $default-font
+  background: $blue-focus
+  height: 60px
   border: none
-  border-radius: 10px
-  width: 100%
-  height: 54px
-  background: transparent
-  color: #000
-  font-size: 15px
+  border-radius: 20px
+  font-size: 16px
+  font-family: $default-font
+  color: $black
+  padding: 0 20px
   cursor: pointer
-  &::placeholder
-    color: #595959
-
+  box-sizing: border-box
   &:hover, &:focus
-    outline: none
     box-shadow: none
+    background: $blue-focus
+    outline: none
+  &::placeholder
+    color: $black
 
 input[type="radio"], input[type="checkbox"]
   width: auto
@@ -126,12 +125,23 @@ button, .btn
   align-items: center
   justify-content: center
   text-align: center
-  padding: 10px 45px
+  padding: 10px
   font-size: 16px
-  font-weight: bold
-  height: 46px
-  border-radius: 10px
+  height: 37px
+  font-size: 14px
+  border-radius: 20px
   transition: 0.3s ease
+  width: 100%
+
+.btn-blue
+  color: #fff
+  background: $blue-hover
+  &:hover
+    background: $blue
+    color: #fff
+  &:focus, &:active
+    background: $blue-focus
+    color: #fff
 
 .svg-icon
   display: inline-block
@@ -161,10 +171,10 @@ h1, .h1, h2, .h2
   color: $blue
 
 .mb-20
-  margin-bottom: 20px  
+  margin-bottom: 20px
 
-.mb-55  
-  margin-bottom: 55px    
+.mb-55
+  margin-bottom: 55px
 
 .content-box
   background: #fff
@@ -179,7 +189,12 @@ h1, .h1, h2, .h2
     text-align: center
     font-weight: bold
     margin: 20px auto 0
-    font-size: 20px  
+    font-size: 20px
+
+.content-box-table
+  padding: 25px 12px 45px 25px  
+  thead
+    font-weight: 500  
 
 .container
   max-width: none
@@ -189,8 +204,8 @@ h1, .h1, h2, .h2
 .row
   margin: 0 -13.5px
   >*
-    padding: 0 13.5px  
-    
+    padding: 0 13.5px
+
 .w-100
   width: 100%
 
@@ -202,7 +217,7 @@ h1, .h1, h2, .h2
 .sidebar
   max-width: 367px
   width: 100%
- 
+
 .content
   width: calc( 100% - 367px )
   padding: 72px 120px 72px 40px
@@ -215,38 +230,107 @@ h1, .h1, h2, .h2
   flex-wrap: wrap
   h1, .h1, h2, .h2
     margin-right: 40px
-    
 
-// .slick-slider
-//   width: 100%
+.dropdown
+  display: flex
+  align-items: center
+  background: #fff
+  border-radius: 20px
+  border: 1px solid #EAF3FF
+  font-size: 16px
+  font-family: $default-font
+  padding: 20px
+  width: fit-content
 
-// .slick-slide
-//   outline: none
+.dropdown-toggle
+  font-size: 16px
+  color: #1D1D1B
+  display: flex
+  align-items: center
+  justify-content: space-between
+  min-width: 180px
+  background: #fff
+  &::after
+    content: ''
+    width: 15px
+    height: 10px
+    min-width: 15px
+    margin: 0 0 0 17px
+    background: url('../img/arrow-select.svg') no-repeat center
+    background-size: 100%
+    border: none
+
+.dropdown-menu
+  width: 100%
+  left: 0 !important
+  top: 0 !important
+  transform: none !important
+  border: none
+  border-radius: 20px
+  padding: 20px
+  background: #fff
+
+.table
+  width: 100%
+  padding: 0
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active
+  width: 100%
 
 //checkbox my
 .label-checkbox
   position: relative
   display: flex
   align-items: flex-start
-  color: rgba(255, 255, 255, 0.5)
-  font-size: 14px
-  margin: 15px 0 0
-  line-height: 1.14
-
-.inp-check
-  display: none
-
-.checkbox-custom
-  margin: 0 12px 0 0
-  position: relative
-  border-radius: 6px
-  background-color: #fff
-  width: 16px
-  height: 16px
-  min-width: 16px
+  color: $black
+  font-size: 16px
+  font-family: $default-font
+  margin: 0 0 16px
+  width: 100%
   cursor: pointer
+  &:last-child
+    margin: 0
 
-.inp-check:checked ~ .checkbox-custom
-  background: #fff url("../img/check-black.svg") no-repeat center
-  background-size: 8px
+  input
+    display: none
+    &:checked ~ .label-checkbox__custom
+      &::before
+        display: block
+  &__text
+    margin: 0 auto 0 0
+  &__custom
+    margin: 0 0 0 28px
+    order: 1
+    position: relative
+    border-radius: 4px
+    border: 1px solid #6DABFF
+    background-color: #fff
+    width: 20px
+    height: 20px
+    min-width: 20px
+    cursor: pointer
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      width: 12px
+      height: 12px
+      border-radius: 2px
+      background: #6DABFF
+      display: none
+      transition: .3s ease
+
+.label-checkbox-table
+  position: relative
+  z-index: 1
+  .label-checkbox__custom
+    margin: 0  
+    position: absolute
+    left: -47px
+    top: 50%
+    transform: translate(0,-50%)
 //checkbox my end
