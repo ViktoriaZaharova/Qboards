@@ -46,6 +46,9 @@ body
   background: #F6F7FA
   color: $black
 
+.no-scroll
+  overflow: hidden  
+
 img
   display: block
   max-width: 100%
@@ -133,6 +136,21 @@ button, .btn
   transition: 0.3s ease
   width: 100%
 
+.btn-md
+  height: 60px
+  padding: 20px
+
+.btn-accent
+  color: #fff
+  background: $blue
+  border: none
+  &:hover
+    color: #fff
+    background: $blue-hover
+  &:focus, &:active
+    background: $blue-focus
+    color: #fff
+
 .btn-blue
   color: #fff
   background: $blue-hover
@@ -142,6 +160,33 @@ button, .btn
   &:focus, &:active
     background: $blue-focus
     color: #fff
+
+.btn-light-blue
+  background: #EAF3FF
+  color: $blue
+  &:hover
+    background: $blue
+    color: #fff
+  &:focus, &:active
+    color: #fff
+    background: $blue-hover
+
+.btn-white
+  background: #fff
+  border: 1px solid $blue
+  color: $black
+  &:hover
+    color: #fff
+    background: $blue-hover
+    border-color: $blue-hover
+  &:focus
+    background: $blue
+    color: #fff
+    border-color: $blue
+  &:disabled
+    border-color: $blue-focus
+    background: $blue-focus
+    color: $blue
 
 .svg-icon
   display: inline-block
@@ -192,9 +237,9 @@ h1, .h1, h2, .h2
     font-size: 20px
 
 .content-box-table
-  padding: 25px 12px 45px 25px  
+  padding: 25px 12px 45px 25px
   thead
-    font-weight: 500  
+    font-weight: 500
 
 .container
   max-width: none
@@ -217,8 +262,15 @@ h1, .h1, h2, .h2
 .sidebar
   max-width: 367px
   width: 100%
+  height: 100%
+  position: fixed
+  left: 0
+  top: 0
+  z-index: 3
+  overflow-y: auto
 
 .content
+  margin-left: auto
   width: calc( 100% - 367px )
   padding: 72px 120px 72px 40px
 
@@ -241,6 +293,7 @@ h1, .h1, h2, .h2
   font-family: $default-font
   padding: 20px
   width: fit-content
+  min-width: 180px
 
 .dropdown-toggle
   font-size: 16px
@@ -248,7 +301,7 @@ h1, .h1, h2, .h2
   display: flex
   align-items: center
   justify-content: space-between
-  min-width: 180px
+  width: 100%
   background: #fff
   &::after
     content: ''
@@ -259,6 +312,12 @@ h1, .h1, h2, .h2
     background: url('../img/arrow-select.svg') no-repeat center
     background-size: 100%
     border: none
+  &.disabled
+    color: #DDDEE0
+    border-color: #C4C5C7
+    &:after
+      background: url('../img/arrow-select-disabled.svg') no-repeat center
+      background-size: 100%
 
 .dropdown-menu
   width: 100%
@@ -270,12 +329,103 @@ h1, .h1, h2, .h2
   padding: 20px
   background: #fff
 
+.dropdown-scroll-horizontal
+  width: 100%
+  max-height: 184px
+  overflow-y: auto
+  padding: 0
+  &::-webkit-scrollbar
+    width: 10px
+    border-radius: 20px
+    background: #FBFCFF
+  &::-webkit-scrollbar-thumb
+    border-radius: 20px
+    background-color: #EAF3FF
+  &__body
+    width: 100%
+    padding: 0 12px 0 0
+
 .table
   width: 100%
   padding: 0
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active
   width: 100%
+
+.ui-datepicker.ui-widget.ui-widget-content
+  border: none
+  border-radius: 20px
+  background: #fff
+  font-size: 14px
+  font-family: $default-font
+  padding: 20px 23.5px
+  width: 340px
+  margin: 15px 0 0
+
+.ui-datepicker .ui-datepicker-header
+  padding: 0 0 12px
+  border: none
+  border-radius: 0
+  border-bottom: 1px solid #6DABFF
+  background: transparent
+  font-size: 16px
+  font-family: $default-font
+  display: flex
+  align-items: center
+  justify-content: center
+
+.ui-datepicker .ui-datepicker-title
+  margin: 0 18px
+  font-weight: normal
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next
+  position: relative
+  top: 0
+  left: 0
+  cursor: pointer
+  width: 9px
+  height: 16px
+  min-width: 9px
+  border: none
+  border-radius: 0
+  span
+    display: none
+
+.ui-datepicker .ui-datepicker-prev
+  background: url('../img/arrow-left.svg') no-repeat center
+  background-size: 100%
+
+.ui-datepicker .ui-datepicker-next
+  order: 1
+  background: url('../img/arrow-right.svg') no-repeat center
+  background-size: 100%
+
+.ui-datepicker th
+  padding: 12px 0
+  text-transform: uppercase
+  font-weight: normal
+  font-size: 14px
+  color: #0047AB
+
+.ui-datepicker td
+  font-size: 14px
+  padding: 2px 0
+
+.ui-datepicker td span, .ui-datepicker td a
+  padding: 0
+  margin: 0 auto
+  width: 24px !important
+  height: 24px
+  min-width: 24px
+  border-radius: 50%
+  @include d-flex
+  border: none !important
+  background: transparent !important
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight, .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover
+  background: #EAF3FF !important
+  opacity: 1
+  color: $black
 
 //checkbox my
 .label-checkbox
@@ -328,7 +478,7 @@ h1, .h1, h2, .h2
   position: relative
   z-index: 1
   .label-checkbox__custom
-    margin: 0  
+    margin: 0
     position: absolute
     left: -47px
     top: 50%

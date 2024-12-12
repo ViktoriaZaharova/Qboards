@@ -1,13 +1,105 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width: 1200px)
+@media only screen and (max-width: 2200px)
+  .content
+    padding: 50px 40px
+@media only screen and (max-width: 1900px)
+  .content-head
+    margin: 0 0 32px 
 
-@media only screen and (max-width: 992px)
+@media only screen and (max-width: 1600px)
+  .content-box-diagram
+    padding: 30px 15px 30px 23px   
+
+@media only screen and (max-width: 1440px)
+  .sidebar-menu
+    padding: 23px 38px 36px 75px
+
+  .menu > li
+    margin: 0 0 30px
+    &:last-child
+      margin: 0
+
+  .nav-menu
+    margin: 0 0 30px
+
+  .submenu
+    margin: 16px 0 0
+
+  .mb-55
+    margin-bottom: 45px
+
+
+
+
+@media only screen and (max-width: 1300px)
+  .content
+    width: 100%
+    padding: 0
+
+  header
+    display: flex
+    
+  .sidebar
+    display: none
+
+  .sidebar-menu__close
+    display: flex  
+
+  .container
+    padding: 0 20px
+
+  .row
+    margin: 0 -20px
+    >*
+      padding: 0 20px 
+
+  .content-head h1, .content-head .h1, .content-head h2, .content-head .h2
+    width: 100%
+    margin: 0 0 20px
+
+  .btn-filter
+    display: flex
+    align-items: center
+    justify-content: center  
+
+  .filter-wrapper
+    display: none
+    position: fixed
+    left: 0
+    top: 0
+    height: 100%
+    overflow-y: auto
+    z-index: 5
+    background: #F6F7FA
+    padding: 17px 20px
+    &__head
+      display: flex
+
+  .filter-box
+    margin: 0 0 20px
+    width: 100%
+    .dropdown
+      margin-left: auto
+
+  .filter-box-period
+    width: fit-content
+
+  .filter-category
+    display: block
+
+  .btn-apply-filters
+    display: flex    
 
 @media only screen and (max-width: 768px)
+  h1, .h1, h2, .h2
+    font-size: 20px
 
-@media only screen and (max-width: 576px)
+  .content-box
+    margin: 0 0 35px
+    &:last-child
+      margin: 0  
 
 @media only screen and (max-width: 480px)
 

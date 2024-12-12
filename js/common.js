@@ -86,7 +86,8 @@ am5.ready(function () {
     wheelX: "panX",
     wheelY: "zoomX",
     pinchZoomX: true,
-    paddingLeft: 0
+    paddingLeft: 0,
+
   }));
 
 
@@ -140,7 +141,7 @@ am5.ready(function () {
   }));
 
   var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-    renderer: am5xy.AxisRendererY.new(root, {})
+    renderer: am5xy.AxisRendererY.new(root, { opposite: true }),
   }));
 
 
@@ -299,162 +300,153 @@ am5.ready(function () {
 
 
 // chartdiv3
+// Create root element
+var root = am5.Root.new("chartdiv3");
 
-am5.ready(function () {
+const myTheme = am5.Theme.new(root);
 
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new("chartdiv3");
+myTheme.rule("AxisLabel", ["minor"]).setAll({
+  dy: 1
+});
 
-  const myTheme = am5.Theme.new(root);
+// Set themes
+root.setThemes([
+  am5themes_Animated.new(root),
+  myTheme,
+  am5themes_Responsive.new(root)
+]);
 
-  myTheme.rule("AxisLabel", ["minor"]).setAll({
-    dy: 1
-  });
+// Create chart
+var chart = root.container.children.push(am5xy.XYChart.new(root, {
+  panX: false,
+  panY: false,
+  wheelX: "panX",
+  wheelY: "zoomX",
+  paddingLeft: 0
+}));
 
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-    am5themes_Animated.new(root),
-    myTheme,
-    am5themes_Responsive.new(root)
-  ]);
+// Add cursor
+var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+  behavior: "zoomX"
+}));
+cursor.lineY.set("visible", false);
 
+var date = new Date();
+date.setHours(0, 0, 0, 0);
+var value = 0;
 
-  // Create chart
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(am5xy.XYChart.new(root, {
-    panX: false,
-    panY: false,
-    wheelX: "panX",
-    wheelY: "zoomX",
-    paddingLeft: 0
-  }));
+function generateData() {
+  // Генерируем значения от -10 до +10
+  value = Math.round(Math.random() * 20 - 10);
+  am5.time.add(date, "day", 1);
+  return {
+    date: date.getTime(),
+    value: value
+  };
+}
 
-
-  // Add cursor
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
-    behavior: "zoomX"
-  }));
-  cursor.lineY.set("visible", false);
-
-  var date = new Date();
-  date.setHours(0, 0, 0, 0);
-  var value = 100;
-
-  function generateData() {
-    value = Math.round((Math.random() * 10 - 5) + value);
-    am5.time.add(date, "day", 1);
-    return {
-      date: date.getTime(),
-      value: value
-    };
+function generateDatas(count) {
+  var data = [];
+  for (var i = 0; i < count; ++i) {
+    data.push(generateData());
   }
+  return data;
+}
 
-  function generateDatas(count) {
-    var data = [];
-    for (var i = 0; i < count; ++i) {
-      data.push(generateData());
-    }
-    return data;
-  }
+// Create axes
+var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+  maxDeviation: 0,
+  baseInterval: {
+    timeUnit: "day",
+    count: 1
+  },
+  renderer: am5xy.AxisRendererX.new(root, {
+    minorGridEnabled: true,
+    minorLabelsEnabled: true
+  }),
+  tooltip: am5.Tooltip.new(root, {})
+}));
 
+xAxis.set("minorDateFormats", {
+  "day": "dd",
+  "month": "MM"
+});
 
-  // Create axes
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-  var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-    maxDeviation: 0,
-    baseInterval: {
-      timeUnit: "day",
-      count: 1
-    },
-    renderer: am5xy.AxisRendererX.new(root, {
-      minorGridEnabled: true,
-      minorLabelsEnabled: true
-    }),
-    tooltip: am5.Tooltip.new(root, {})
-  }));
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  renderer: am5xy.AxisRendererY.new(root, {}),
+  min: -20, // Устанавливаем минимальное значение
+  max: 20  // Устанавливаем максимальное значение для наглядности
+}));
 
-  xAxis.set("minorDateFormats", {
-    "day": "dd",
-    "month": "MM"
-  });
+// Add series
+var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+  name: "Series",
+  xAxis: xAxis,
+  yAxis: yAxis,
+  valueYField: "value",
+  valueXField: "date",
+  tooltip: am5.Tooltip.new(root, {
+    labelText: "{valueY}"
+  })
+}));
 
+series.columns.template.setAll({
+  strokeOpacity: 0,
+  fillOpacity: 0.8,
+  templateField: "columnSettings"
+});
 
-  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-    renderer: am5xy.AxisRendererY.new(root, {})
-  }));
+// Add scrollbar
+// chart.set("scrollbarX", am5.Scrollbar.new(root, {
+//   orientation: "horizontal"
+// }));
 
+var data = generateDatas(30);
+series.data.setAll(data);
 
-  // Add series
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-  var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-    name: "Series",
-    xAxis: xAxis,
-    yAxis: yAxis,
-    valueYField: "value",
-    valueXField: "date",
-    tooltip: am5.Tooltip.new(root, {
-      labelText: "{valueY}"
-    })
-  }));
-
-  series.columns.template.setAll({ strokeOpacity: 0 })
-
-
-  // Add scrollbar
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
-  // chart.set("scrollbarX", am5.Scrollbar.new(root, {
-  //   orientation: "horizontal"
-  // }));
-
-  var data = generateDatas(30);
-  series.data.setAll(data);
-
-
-  // Make stuff animate on load
-  // https://www.amcharts.com/docs/v5/concepts/animations/
-  series.appear(1000);
-  chart.appear(1000, 100);
-
-}); // end am5.ready()
+// Make stuff animate on load
+series.appear(1000);
+chart.appear(1000, 100);
 
 
 $('#example-table1').DataTable({
   select: true,
   info: false,
+  responsive: true,
+  // scrollY: 400,
   language: {
     search: '',
-    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/ru.json'
-  },
-  order: {
-    idx: 2,
-    dir: 'asc'
+    url: 'js/ru.json'
   },
   layout: {
-    topStart: 'pageLength',
+    topStart: {
+      pageLength: true,
+      paging: true,
+
+    },
     topEnd: {
       search: {
         placeholder: 'Поиск'
       }
     },
-    bottomStart: '',
-    bottomEnd: ''
+    bottomStart: null,
+    bottomEnd: null
   }
 });
+
 $('#example-table2').DataTable({
   select: false,
   info: false,
   language: {
     search: '',
-    url: 'https://cdn.datatables.net/plug-ins/1.11.5/i18n/ru.json'
+    url: 'js/ru.json'
   },
+
   ordering: false,
   layout: false,
   paging: false,
   scrollCollapse: true,
-    scrollY: '340px'
+  scrollY: '340px'
 });
 
 // calendar
@@ -482,3 +474,26 @@ $(function () {
 
 });
 $(".datepicker1").datepicker();
+
+// mobile menu
+$('.btn-filter').on('click', function () {
+  $('.filter-wrapper').fadeToggle();
+  $('body').toggleClass('no-scroll');
+});
+$('.btn-filter-close').on('click', function (e) {
+  e.preventDefault();
+  $('.filter-wrapper').fadeOut();
+  $('body').removeClass('no-scroll');
+});
+
+$('.btn-toggle-menu').on('click', function (e) {
+  e.preventDefault();
+  $('.sidebar').fadeToggle();
+  $('body').toggleClass('no-scroll');
+});
+
+$('.sidebar-menu__close').on('click', function (e) {
+  e.preventDefault();
+  $('.sidebar').fadeOut();
+  $('body').removeClass('no-scroll');
+});
