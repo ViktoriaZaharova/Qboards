@@ -398,9 +398,6 @@ div.dt-container div.dt-length select:hover, div.dt-container div.dt-length sele
   outline: none;
 }
 
-.dt-scroll-body {
-  padding: 0 33px 0 40px;
-}
 .dt-scroll-body::-webkit-scrollbar {
   width: 20px;
   border-radius: 20px;
@@ -415,8 +412,80 @@ div.dt-scroll-body {
   border: none;
 }
 
-.dt-scroll-foot, .dt-scroll-head {
+.content-box-table .dt-scroll-body {
+  padding: 0 33px 0 40px;
+}
+.content-box-table .dt-scroll-foot, .content-box-table .dt-scroll-head {
   padding: 0 45px 0 40px;
+}
+
+.previous {
+  border: none;
+  border-radius: 0;
+  width: 12px;
+  height: 23px;
+  min-width: 12px;
+  background: url("../img/preview-icon.svg") no-repeat center;
+  background-size: 100%;
+}
+
+div.dt-container div.dt-layout-start > *:not(:last-child) {
+  margin: 0;
+}
+
+div.dt-container div.dt-paging {
+  margin: 0 0 0 55px;
+}
+
+div.dt-container div.dt-paging ul.pagination {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.pagination .page-item:first-child .page-link, .pagination .page-item:first-child .previous {
+  background: url("../img/preview-icon.svg") no-repeat center;
+  background-size: 100%;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .page-item:last-child .page-link.next {
+  background: url("../img/next-icon.svg") no-repeat center;
+  background-size: 100%;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 23px;
+  min-width: 12px;
+  margin: 0 0 0 30px;
+}
+
+.pagination .page-item .page-link {
+  margin: 0 0 0 30px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  color: #1D1D1B;
+}
+.pagination .page-item .page-link:hover, .pagination .page-item .page-link:focus {
+  box-shadow: none;
+}
+
+.pagination .page-item.active .page-link {
+  font-weight: 600;
+  color: #0047AB;
 }
 
 .btn-toggle-menu {

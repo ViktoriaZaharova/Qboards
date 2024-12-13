@@ -412,17 +412,22 @@ chart.appear(1000, 100);
 $('#example-table1').DataTable({
   select: true,
   info: false,
-  responsive: true,
-  // scrollY: 400,
+  scrollCollapse: true,
+  scrollX: 'auto',
   language: {
     search: '',
-    url: 'js/ru.json'
+    url: 'js/ru.json',
+    paginate: {
+      previous: '',
+      next: ''
+    }
   },
   layout: {
     topStart: {
       pageLength: true,
-      paging: true,
-
+      paging: {
+        firstLast: false,
+      },
     },
     topEnd: {
       search: {

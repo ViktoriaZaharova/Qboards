@@ -4,13 +4,21 @@
 @media only screen and (max-width: 2200px)
   .content
     padding: 50px 40px
+
 @media only screen and (max-width: 1900px)
   .content-head
     margin: 0 0 32px 
 
 @media only screen and (max-width: 1600px)
   .content-box-diagram
-    padding: 30px 15px 30px 23px   
+    padding: 30px 15px 30px 23px
+
+  .sidebar
+    max-width: 340px
+
+  .content
+    width: calc( 100% - 340px )  
+    padding: 50px 30px     
 
 @media only screen and (max-width: 1440px)
   .sidebar-menu
@@ -71,7 +79,7 @@
     top: 0
     height: 100%
     overflow-y: auto
-    z-index: 5
+    z-index: 2
     background: #F6F7FA
     padding: 17px 20px
     &__head
@@ -98,11 +106,25 @@
 
   .content-box
     margin: 0 0 35px
+    padding: 25px 20px 35px
     &:last-child
-      margin: 0  
+      margin: 0
+
+  table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc
+    white-space: nowrap    
+
 
 @media only screen and (max-width: 480px)
 
 @media only screen and (max-width: 420px)
 
 @media only screen and (max-width: 370px)	
+  .btn-filter
+    width: 56px
+    height: 56px
+    min-width: 56px
+    padding: 13px
+    border-radius: 10px
+
+  .dropdown
+    padding: 20px 12px  
