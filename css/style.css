@@ -28,10 +28,31 @@
 }
 @font-face {
   font-family: "Montserrat";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/Montserrat/Montserrat-SemiBold.eot");
+  src: url("../fonts/Montserrat/Montserrat-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-SemiBold.woff") format("woff"), url("../fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
   font-weight: 700;
   font-style: normal;
   src: url("../fonts/Montserrat/Montserrat-Bold.eot");
   src: url("../fonts/Montserrat/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/Montserrat/Montserrat-ExtraBold.eot");
+  src: url("../fonts/Montserrat/Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-ExtraBold.woff") format("woff"), url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-style: normal;
+  src: url("../fonts/Montserrat/Montserrat-Black.eot");
+  src: url("../fonts/Montserrat/Montserrat-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Black.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Black.ttf") format("truetype");
 }
 * {
   box-sizing: border-box;
@@ -606,4 +627,17 @@ h1, .h1, h2, .h2 {
   left: -47px;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.select-my {
+  border: 1px solid #EAF3FF;
+  border-radius: 20px;
+  background: #fff url("../img/select-table.svg") no-repeat calc(100% - 20px) center;
+  background-size: 11px;
+  padding: 20px 43px 20px 20px;
+  color: #1D1D1B;
+}
+.select-my:hover, .select-my:focus {
+  background: #fff url("../img/select-table.svg") no-repeat calc(100% - 20px) center;
+  background-size: 11px;
 }

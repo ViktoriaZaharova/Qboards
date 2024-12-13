@@ -7,7 +7,7 @@
 
 @media only screen and (max-width: 1900px)
   .content-head
-    margin: 0 0 32px 
+    margin: 0 0 32px
 
 @media only screen and (max-width: 1600px)
   .content-box-diagram
@@ -17,8 +17,8 @@
     max-width: 340px
 
   .content
-    width: calc( 100% - 340px )  
-    padding: 50px 30px     
+    width: calc( 100% - 340px )
+    padding: 50px 30px
 
 @media only screen and (max-width: 1440px)
   .sidebar-menu
@@ -38,9 +38,6 @@
   .mb-55
     margin-bottom: 45px
 
-
-
-
 @media only screen and (max-width: 1300px)
   .content
     width: 100%
@@ -48,12 +45,14 @@
 
   header
     display: flex
-    
+
   .sidebar
     display: none
+    left: auto
+    right: 0
 
   .sidebar-menu__close
-    display: flex  
+    display: flex
 
   .container
     padding: 0 20px
@@ -61,7 +60,7 @@
   .row
     margin: 0 -20px
     >*
-      padding: 0 20px 
+      padding: 0 20px
 
   .content-head h1, .content-head .h1, .content-head h2, .content-head .h2
     width: 100%
@@ -70,7 +69,7 @@
   .btn-filter
     display: flex
     align-items: center
-    justify-content: center  
+    justify-content: center
 
   .filter-wrapper
     display: none
@@ -98,7 +97,11 @@
     display: block
 
   .btn-apply-filters
-    display: flex    
+    display: flex
+
+@media only screen and (max-width: 992px)
+  div.dt-container div.dt-paging
+    display: none
 
 @media only screen and (max-width: 768px)
   h1, .h1, h2, .h2
@@ -111,14 +114,22 @@
       margin: 0
 
   table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc
-    white-space: nowrap    
+    white-space: nowrap
 
+  div.dt-container div.dt-search input
+    width: 126px
+
+  .table-currency
+    tfoot
+      tr
+        th
+          padding: 20px 0 10px !important
 
 @media only screen and (max-width: 480px)
 
 @media only screen and (max-width: 420px)
 
-@media only screen and (max-width: 370px)	
+@media only screen and (max-width: 370px)
   .btn-filter
     width: 56px
     height: 56px
@@ -127,4 +138,4 @@
     border-radius: 10px
 
   .dropdown
-    padding: 20px 12px  
+    padding: 20px 12px

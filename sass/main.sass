@@ -165,8 +165,8 @@
   margin: 0 30px 30px 0
   &:last-child
     margin-right: 0
-  &:nth-last-child(3)
-    margin-right: 0
+  // &:nth-last-child(3)
+  //   margin-right: 0
   .dropdown
     margin-left: 8px
     width: 180px
@@ -227,6 +227,9 @@
       box-shadow: none
       background: $blue-focus
       color: $black
+
+div.dt-container div.dt-search
+  width: fit-content
 
 div.dt-container div.dt-search input
   margin: 0
@@ -290,13 +293,27 @@ table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > 
 .table>:not(caption)>*>*
   box-shadow: none
   background: transparent
+  padding: 9px 10px
 
 tfoot
   font-weight: bold
   border: none
   box-shadow: none
-  // th
-  //   border-top: 1px solid #6DABFF
+
+.table-currency
+  tfoot
+    tr
+      th
+        padding: 40px 0 20px !important
+
+#example-table1_wrapper
+  .dt-scroll
+    width: 100%
+    display: flex
+    flex-direction: column
+    // align-items: flex-start
+  .dt-scroll-foot
+    order: -1
 
 div.dt-container div.dt-length
   font-size: 16px
@@ -347,10 +364,10 @@ div.dt-scroll-body
   background-size: 100%
 
 div.dt-container div.dt-layout-start > *:not(:last-child)
-  margin: 0  
+  margin: 0
 
 div.dt-container div.dt-paging
-  margin: 0 0 0 55px  
+  margin: 0 0 0 55px
 
 div.dt-container div.dt-paging ul.pagination
   display: flex
@@ -389,10 +406,9 @@ div.dt-container div.dt-paging ul.pagination
   &:hover, &:focus
     box-shadow: none
 
-.pagination .page-item.active .page-link  
+.pagination .page-item.active .page-link
   font-weight: 600
   color: $blue
-
 
 // mobile menu
 .btn-toggle-menu

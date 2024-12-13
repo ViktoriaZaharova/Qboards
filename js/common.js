@@ -2,66 +2,71 @@
 
 // diagram
 am5.ready(function () {
-
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
   var root = am5.Root.new("chartdiv");
 
-
-
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
   root.setThemes([
     am5themes_Animated.new(root),
+    am5themes_Responsive.new(root, ({
+
+    }))
   ]);
 
-
-  // Create chart
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
   var chart = root.container.children.push(am5percent.PieChart.new(root, {
-    layout: root.verticalLayout
+    layout: root.verticalLayout,
+    // creditsPosition: 'top-left'
   }));
 
+  // Define data
+  var data = [{
+    category: "ETH",
+    value: 12
+  }, {
+    category: "BTC",
+    value: 15
+  }, {
+    category: "USDT",
+    value: 12
+  }, {
+    category: "SOL",
+    value: 13
+  }, {
+    category: "BNB",
+    value: 11
+  }, {
+    category: "RUR",
+    value: 8
+  }, {
+    category: "DOGE",
+    value: 3.5
+  }];
+
+  
 
   // Create series
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
-  var series = chart.series.push(am5percent.PieSeries.new(root, {
-    valueField: "value",
-    categoryField: "category"
-  }));
+  var series = chart.series.push(
+    am5percent.PieSeries.new(root, {
+      valueField: "value",
+      categoryField: "category"
+    })
+  );
+  series.data.setAll(data);
+  series.labels.template.set("forceHidden", true);
+  series.ticks.template.set("forceHidden", true);
 
-
-  // Set data
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
-  series.data.setAll([
-    { value: 7, category: "ETH" },
-    { value: 6, category: "BTC" },
-    { value: 5, category: "USDT" },
-    { value: 4, category: "SOL" },
-    { value: 3, category: "BNB" },
-    { value: 2, category: "RUR" },
-    { value: 1, category: "DOGE" },
-  ]);
-
-
-  // Create legend
-  // https://www.amcharts.com/docs/v5/charts/percent-charts/legend-percent-series/
+  // Add legend
   var legend = chart.children.push(am5.Legend.new(root, {
     centerX: am5.percent(0),
     x: am5.percent(0),
-    // marginTop: 15,
-    // marginBottom: 15
   }));
 
+  legend.markers.template.setAll({
+    width: 16,
+    height: 16
+  });
+
   legend.data.setAll(series.dataItems);
-
-
-  // Play initial series animation
-  // https://www.amcharts.com/docs/v5/concepts/animations/#Animation_of_series
   series.appear(1000, 100);
-
 }); // end am5.ready()
-
 
 // chartdiv2
 am5.ready(function () {
@@ -436,7 +441,34 @@ $('#example-table1').DataTable({
     },
     bottomStart: null,
     bottomEnd: null
+  },
+
+  initComplete: function () {
+    this.api()
+      .columns()
+      .every(function () {
+        var column = this;
+
+        // Создание выпадающего списка select и обработчика событий
+        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
+          .appendTo($(column.footer()).empty())
+          .on('change', function () {
+            column
+              .search($(this).val(), { exact: true })
+              .draw();
+          });
+
+        // Добавление списка уникальных значений в options
+        column
+          .data()
+          .unique()
+          .sort()
+          .each(function (d, j) {
+            select.append('<option value="' + d + '">' + d + '</option>');
+          });
+      });
   }
+
 });
 
 $('#example-table2').DataTable({

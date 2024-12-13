@@ -214,9 +214,6 @@
 .filter-box:last-child {
   margin-right: 0;
 }
-.filter-box:nth-last-child(3) {
-  margin-right: 0;
-}
 .filter-box .dropdown {
   margin-left: 8px;
   width: 180px;
@@ -289,6 +286,11 @@
   box-shadow: none;
   background: #EAF3FF;
   color: #1D1D1B;
+}
+
+div.dt-container div.dt-search {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 div.dt-container div.dt-search input {
@@ -368,12 +370,26 @@ table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > 
 .table > :not(caption) > * > * {
   box-shadow: none;
   background: transparent;
+  padding: 9px 10px;
 }
 
 tfoot {
   font-weight: bold;
   border: none;
   box-shadow: none;
+}
+
+.table-currency tfoot tr th {
+  padding: 40px 0 20px !important;
+}
+
+#example-table1_wrapper .dt-scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#example-table1_wrapper .dt-scroll-foot {
+  order: -1;
 }
 
 div.dt-container div.dt-length {
