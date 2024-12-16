@@ -53,6 +53,9 @@
 .menu a:hover, .menu a:focus, .menu a.active {
   color: #0047AB;
 }
+.menu a.active {
+  font-weight: bold;
+}
 
 .submenu {
   width: 100%;
@@ -150,7 +153,7 @@
 .filter-wrapper {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 .filter-wrapper h3 {
@@ -289,13 +292,15 @@
 }
 
 div.dt-container div.dt-search {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-div.dt-container div.dt-search input {
   margin: 0;
   width: 222px;
+}
+div.dt-container div.dt-search input {
+  margin: 0;
+  width: 100%;
+}
+div.dt-container div.dt-search label {
+  display: none;
 }
 
 .table-striped {
@@ -328,7 +333,7 @@ table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataT
 }
 
 table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc {
-  padding: 22px 10px;
+  padding: 22px 0;
 }
 
 .dt-column-order {
@@ -531,4 +536,42 @@ div.dt-container div.dt-paging ul.pagination {
   border: 1px solid #EAF3FF;
   margin: 0 0 0 auto;
   display: none;
+}
+
+.content-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 0 20px;
+}
+.content-row .form-search {
+  margin-left: auto;
+}
+
+.mb-35 {
+  margin-bottom: 35px;
+}
+
+#example-table3_wrapper .dt-scroll-body, #example-table3_wrapper .dt-scroll-head, #example-table3_wrapper .dt-scroll-foot {
+  padding: 0 0 0 40px;
+}
+
+table.dataTable.table-clients > tbody > tr > th, table.dataTable > tbody > tr > td {
+  padding: 15px 0;
+}
+
+table.dataTable.table-clients > thead > tr > th, table.dataTable > thead > tr > th {
+  padding: 22px 0;
+}
+
+div.dt-container.dt-empty-footer .dt-scroll-body {
+  border: none;
+}
+
+table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
+  border: none;
+}
+
+.content-box-translation {
+  padding: 28px 30px 36px;
 }

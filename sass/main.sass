@@ -43,6 +43,8 @@
     color: $black
     &:hover, &:focus, &.active
       color: $blue
+    &.active
+      font-weight: bold
 
 .submenu
   width: 100%
@@ -117,7 +119,7 @@
 .filter-wrapper
   width: 100%
   display: flex
-  align-items: center
+  align-items: flex-start
   flex-wrap: wrap
   h3
     text-transform: uppercase
@@ -228,18 +230,23 @@
       background: $blue-focus
       color: $black
 
-div.dt-container div.dt-search
-  width: fit-content
 
-div.dt-container div.dt-search input
+div.dt-container div.dt-search
   margin: 0
   width: 222px
+  input
+    margin: 0
+    width: 100%
+  label
+    display: none
+
 
 .table-striped
   font-size: 20px
   font-family: $default-font
   thead
     font-weight: bold
+    // text-transform: uppercase
     th
       padding: 22px 0
     tr
@@ -258,7 +265,7 @@ table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataT
   text-align: left
 
 table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > th.dt-orderable-desc, table.dataTable thead > tr > td.dt-orderable-asc, table.dataTable thead > tr > td.dt-orderable-desc
-  padding: 22px 10px
+  padding: 22px 0
 
 .dt-column-order
   width: 15px
@@ -434,3 +441,35 @@ div.dt-container div.dt-paging ul.pagination
   border: 1px solid #EAF3FF
   margin: 0 0 0 auto
   display: none
+
+// client-list page
+.content-row
+  width: 100%
+  display: flex
+  align-items: center
+  // flex-wrap: wrap
+  margin: 0 0 20px
+  .form-search
+    margin-left: auto
+
+.mb-35
+  margin-bottom: 35px    
+
+#example-table3_wrapper
+  .dt-scroll-body, .dt-scroll-head, .dt-scroll-foot
+    padding: 0 0 0 40px
+
+table.dataTable.table-clients > tbody > tr > th, table.dataTable > tbody > tr > td  
+  padding: 15px 0
+
+table.dataTable.table-clients > thead > tr > th, table.dataTable > thead > tr > th
+  padding: 22px 0  
+
+div.dt-container.dt-empty-footer .dt-scroll-body
+  border: none 
+
+table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
+  border: none
+
+.content-box-translation
+  padding: 28px 30px 36px  
