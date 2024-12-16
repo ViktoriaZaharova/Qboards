@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qboards</title>
+
+  <meta property="og:image" content="path/to/image.jpg">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+  <!-- add plugins css -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap5.css">
+  <!-- add plugins css end -->
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <a href="index.html" class="logo"><img src="img/logo.svg" alt=""></a>
+      <a href="#" class="btn-toggle-menu"><svg class="svg-icon">
+          <use xlink:href="img/sprite.svg#toggle-icon"></use>
+        </svg></a>
+    </header>
+    <div class="sidebar">
+      <div class="sidebar-menu">
+        <a href="#" class="sidebar-menu__close"><svg class="svg-icon">
+            <use xlink:href="img/sprite.svg#toggle-icon"></use>
+          </svg></a>
+        <a href="index.html" class="logo"><img src="img//logo.svg" alt=""></a>
+        <nav class="nav-menu">
+          <ul class="menu my-ul">
+            <li class="nav-item"><a href="index.html" class="nav-link active">Графики активов (AUM)</a>
+
+            </li>
+            <li class="nav-item"><a href="client-list.html" class="nav-link">Клиенты</a>
+              <ul class="submenu my-ul">
+                <li class="nav-item"><a href="client-list.html" class="nav-link">Список клиентов</a></li>
+                <li class="nav-item"><a href="translations.html" class="nav-link">Переводы & HWM</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="current-indicators.html" class="nav-link">Статистика торговли</a>
+              <ul class="submenu my-ul">
+                <li class="nav-item"><a href="current-indicators.html" class="nav-link">Текущие показатели</a></li>
+                <li class="nav-item"><a href="balances.html" class="nav-link">Балансы</a></li>
+                <li class="nav-item"><a href="positions.html" class="nav-link">Позиции</a></li>
+                <li class="nav-item"><a href="trading-metrics.html" class="nav-link">Метрики торговли</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="reports.html" class="nav-link">Отчеты</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-menu__footer">
+          <div class="balance-box">
+            <p>Overall $:<span>232</span></p>
+            <p>Total bots $:<span>234</span></p>
+          </div>
+
+          <div class="admin-box">
+            <div class="admin-box__photo"><img src="img/admin-photo.jpg" alt=""></div>
+            <div class="admin-box__name">Петр Иванов</div>
+            <a href="#" class="admin-box__exit"><svg class="svg-icon">
+                <use xlink:href="img/sprite.svg#exit-icon"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="content-box content-box-clients">
+              <div class="content-head">
+                <h1>Позиции</h1>
+              </div>
+              <div class="content-row">
+                <div class="btn-group">
+                  <a href="balances.html" class="btn btn-md btn-light-blue">Балансы</a>
+                  <a href="positions.html" class="btn btn-md btn-white">Позиции</a>
+                </div>
+                <form method="post" class="form-search">
+                  <label><input type="text" name="search" placeholder="Поиск"></label>
+                </form>
+              </div>
+              <div class="content-body">
+                <table id="example-table3" class="table table-clients table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Product</th>
+                      <th>RP</th>
+                      <th>HWM</th>
+                      <th>BLNC</th>
+                      <th>NET</th>
+                      <th>AGR</th>
+                      <th>HMWDT</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1" checked>
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="label-checkbox label-checkbox-table">
+                          <input type="checkbox" name="checkbox-table1">
+                          <span class="label-checkbox__custom"></span>
+                          <span class="label-checkbox__text">Клиент 1</span>
+                        </label>
+                      </td>
+                      <td>Продукт 1</td>
+                      <td>1344</td>
+                      <td>ETH</td>
+                      <td>0,323</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                      <td>1344</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- add plugins js-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dataTables.js"></script>
+  <script src="js/dataTables.bootstrap5.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/percent.js"></script>
+  <script src="js/xy.js"></script>
+  <script src="js/ru_RU.js"></script>
+  <script src="js/Animated.js"></script>
+  <script src="js/Responsive.js"></script>
+
+  <!-- add plugins js end-->
+
+  <script src="js/common.js"></script>
+
+
+
+</body>
+
+</html>

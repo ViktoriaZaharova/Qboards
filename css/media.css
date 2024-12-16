@@ -110,6 +110,9 @@
   .content-box-clients h1, .content-translation h1 {
     margin: 0;
   }
+  .content-head .form-search {
+    margin: 10px 0 0;
+  }
 }
 @media only screen and (max-width: 992px) {
   div.dt-container div.dt-paging {

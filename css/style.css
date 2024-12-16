@@ -431,6 +431,9 @@ h1, .h1, h2, .h2 {
 .content-head h1, .content-head .h1, .content-head h2, .content-head .h2 {
   margin-right: 40px;
 }
+.content-head .form-search {
+  margin-left: auto;
+}
 
 .dropdown {
   display: flex;
