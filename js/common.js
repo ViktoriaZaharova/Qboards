@@ -118,6 +118,31 @@ $('#example-table3').DataTable({
   paging: false,
   scrollCollapse: true,
   scrollX: 'auto',
+  initComplete: function () {
+    this.api()
+      .columns()
+      .every(function () {
+        var column = this;
+
+        // Создание выпадающего списка select и обработчика событий
+        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
+          .appendTo($(column.footer()).empty())
+          .on('change', function () {
+            column
+              .search($(this).val(), { exact: true })
+              .draw();
+          });
+
+        // Добавление списка уникальных значений в options
+        column
+          .data()
+          .unique()
+          .sort()
+          .each(function (d, j) {
+            select.append('<option value="' + d + '">' + d + '</option>');
+          });
+      });
+  }
 });
 
 $('#example-table4').DataTable({
@@ -145,7 +170,31 @@ $('#example-table4').DataTable({
     bottomStart: null,
     bottomEnd: null
   },
+  initComplete: function () {
+    this.api()
+      .columns()
+      .every(function () {
+        var column = this;
 
+        // Создание выпадающего списка select и обработчика событий
+        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
+          .appendTo($(column.footer()).empty())
+          .on('change', function () {
+            column
+              .search($(this).val(), { exact: true })
+              .draw();
+          });
+
+        // Добавление списка уникальных значений в options
+        column
+          .data()
+          .unique()
+          .sort()
+          .each(function (d, j) {
+            select.append('<option value="' + d + '">' + d + '</option>');
+          });
+      });
+  }
 });
 
 $('#example-table5').DataTable({
@@ -173,7 +222,31 @@ $('#example-table5').DataTable({
     bottomStart: null,
     bottomEnd: null
   },
+  initComplete: function () {
+    this.api()
+      .columns()
+      .every(function () {
+        var column = this;
 
+        // Создание выпадающего списка select и обработчика событий
+        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
+          .appendTo($(column.footer()).empty())
+          .on('change', function () {
+            column
+              .search($(this).val(), { exact: true })
+              .draw();
+          });
+
+        // Добавление списка уникальных значений в options
+        column
+          .data()
+          .unique()
+          .sort()
+          .each(function (d, j) {
+            select.append('<option value="' + d + '">' + d + '</option>');
+          });
+      });
+  }
 });
 
 // calendar
@@ -202,3 +275,7 @@ $(function () {
 });
 $(".datepicker1").datepicker();
 
+$('.dropdown-menu .btn-apply').on('click', function(e){
+  e.preventDefault();
+  $(this).parents('.dropdown-menu').removeClass('show');
+});

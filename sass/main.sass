@@ -242,11 +242,10 @@ div.dt-container div.dt-search
 
 
 .table-striped
-  font-size: 20px
+  font-size: 18px
   font-family: $default-font
   thead
     font-weight: bold
-    // text-transform: uppercase
     th
       padding: 22px 0
     tr
@@ -279,12 +278,12 @@ table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > t
 
 table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order, table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order
   position: relative
-  margin: 0 0 0 8px
+  margin: 0 0 0 6px
   display: inline-flex
   align-items: center
-  width: 15px
-  height: 10px
-  min-width: 15px
+  width: 12px
+  height: 8px
+  min-width: 12px
   right: 0
 
 table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:before
@@ -302,6 +301,13 @@ table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > 
   background: transparent
   padding: 9px 10px
 
+.table
+  td, th
+    vertical-align: middle
+  thead
+    th
+      white-space: nowrap  
+
 tfoot
   font-weight: bold
   border: none
@@ -313,7 +319,7 @@ tfoot
       th
         padding: 40px 0 20px !important
 
-#example-table1_wrapper
+#example-table1_wrapper, .content-box-clients, .content-box-translation
   .dt-scroll
     width: 100%
     display: flex
@@ -465,6 +471,9 @@ table.dataTable.table-clients > tbody > tr > th, table.dataTable > tbody > tr > 
 table.dataTable.table-clients > thead > tr > th, table.dataTable > thead > tr > th
   padding: 22px 0  
 
+table.dataTable.table-clients > tfoot > tr > th, table.dataTable > tfoot > tr > th
+  padding: 10px 0  
+
 div.dt-container.dt-empty-footer .dt-scroll-body
   border: none 
 
@@ -473,3 +482,34 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
 
 .content-box-translation
   padding: 28px 30px 36px  
+
+.content-box-reports
+  .filter-box-period
+    margin: 0 28px 0 auto
+  .form-search
+    margin: 0  
+
+.td-text
+  display: flex
+  align-items: center
+  position: relative
+  z-index: 1
+  .label-checkbox
+    position: absolute
+    left: -40px
+    top: 50%
+    transform: translate(0, -50%)
+    width: fit-content
+    &__custom
+      position: relative
+      left: 0
+      top: 0
+      transform: none
+  a
+    color: $black
+    &:hover
+      color: $blue
+
+.nav-tabs
+  border: none
+  border-radius: 0          

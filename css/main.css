@@ -304,7 +304,7 @@ div.dt-container div.dt-search label {
 }
 
 .table-striped {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Montserrat", sans-serif;
 }
 .table-striped thead {
@@ -350,12 +350,12 @@ table.dataTable thead > tr > th.dt-orderable-asc, table.dataTable thead > tr > t
 
 table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order, table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order {
   position: relative;
-  margin: 0 0 0 8px;
+  margin: 0 0 0 6px;
   display: inline-flex;
   align-items: center;
-  width: 15px;
-  height: 10px;
-  min-width: 15px;
+  width: 12px;
+  height: 8px;
+  min-width: 12px;
   right: 0;
 }
 
@@ -378,6 +378,13 @@ table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > 
   padding: 9px 10px;
 }
 
+.table td, .table th {
+  vertical-align: middle;
+}
+.table thead th {
+  white-space: nowrap;
+}
+
 tfoot {
   font-weight: bold;
   border: none;
@@ -388,12 +395,12 @@ tfoot {
   padding: 40px 0 20px !important;
 }
 
-#example-table1_wrapper .dt-scroll {
+#example-table1_wrapper .dt-scroll, .content-box-clients .dt-scroll, .content-box-translation .dt-scroll {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-#example-table1_wrapper .dt-scroll-foot {
+#example-table1_wrapper .dt-scroll-foot, .content-box-clients .dt-scroll-foot, .content-box-translation .dt-scroll-foot {
   order: -1;
 }
 
@@ -564,6 +571,10 @@ table.dataTable.table-clients > thead > tr > th, table.dataTable > thead > tr > 
   padding: 22px 0;
 }
 
+table.dataTable.table-clients > tfoot > tr > th, table.dataTable > tfoot > tr > th {
+  padding: 10px 0;
+}
+
 div.dt-container.dt-empty-footer .dt-scroll-body {
   border: none;
 }
@@ -574,4 +585,43 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
 
 .content-box-translation {
   padding: 28px 30px 36px;
+}
+
+.content-box-reports .filter-box-period {
+  margin: 0 28px 0 auto;
+}
+.content-box-reports .form-search {
+  margin: 0;
+}
+
+.td-text {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.td-text .label-checkbox {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.td-text .label-checkbox__custom {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+}
+.td-text a {
+  color: #1D1D1B;
+}
+.td-text a:hover {
+  color: #0047AB;
+}
+
+.nav-tabs {
+  border: none;
+  border-radius: 0;
 }
