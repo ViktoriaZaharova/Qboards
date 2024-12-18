@@ -230,7 +230,6 @@
       background: $blue-focus
       color: $black
 
-
 div.dt-container div.dt-search
   margin: 0
   width: 222px
@@ -239,7 +238,6 @@ div.dt-container div.dt-search
     width: 100%
   label
     display: none
-
 
 .table-striped
   font-size: 18px
@@ -259,6 +257,9 @@ div.dt-container div.dt-search
 
 table.table.dataTable.table-striped > tbody > tr:nth-of-type(2n+1) > *
       box-shadow: none
+
+table.table.dataTable > :not(caption) > * > *
+      background: transparent
 
 table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date
   text-align: left
@@ -306,7 +307,7 @@ table.dataTable thead > tr > th.dt-orderable-asc:hover, table.dataTable thead > 
     vertical-align: middle
   thead
     th
-      white-space: nowrap  
+      white-space: nowrap
 
 tfoot
   font-weight: bold
@@ -459,35 +460,35 @@ div.dt-container div.dt-paging ul.pagination
     margin-left: auto
 
 .mb-35
-  margin-bottom: 35px    
+  margin-bottom: 35px
 
-#example-table3_wrapper
+#example-table3_wrapper, #example-table6_wrapper
   .dt-scroll-body, .dt-scroll-head, .dt-scroll-foot
     padding: 0 0 0 40px
 
-table.dataTable.table-clients > tbody > tr > th, table.dataTable > tbody > tr > td  
+table.dataTable.table-clients > tbody > tr > th, table.dataTable > tbody > tr > td
   padding: 15px 0
 
 table.dataTable.table-clients > thead > tr > th, table.dataTable > thead > tr > th
-  padding: 22px 0  
+  padding: 22px 0
 
 table.dataTable.table-clients > tfoot > tr > th, table.dataTable > tfoot > tr > th
-  padding: 10px 0  
+  padding: 10px 0
 
 div.dt-container.dt-empty-footer .dt-scroll-body
-  border: none 
+  border: none
 
 table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
   border: none
 
 .content-box-translation
-  padding: 28px 30px 36px  
+  padding: 28px 30px 36px
 
 .content-box-reports
   .filter-box-period
     margin: 0 28px 0 auto
   .form-search
-    margin: 0  
+    margin: 0
 
 .td-text
   display: flex
@@ -512,4 +513,10 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
 
 .nav-tabs
   border: none
-  border-radius: 0          
+  border-radius: 0
+
+.content-box-current
+  table
+    th, td
+       width: 150px
+       min-width: 150px

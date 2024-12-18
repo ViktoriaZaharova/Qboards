@@ -328,6 +328,10 @@ table.table.dataTable.table-striped > tbody > tr:nth-of-type(2n+1) > * {
   box-shadow: none;
 }
 
+table.table.dataTable > :not(caption) > * > * {
+  background: transparent;
+}
+
 table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
   text-align: left;
 }
@@ -559,7 +563,7 @@ div.dt-container div.dt-paging ul.pagination {
   margin-bottom: 35px;
 }
 
-#example-table3_wrapper .dt-scroll-body, #example-table3_wrapper .dt-scroll-head, #example-table3_wrapper .dt-scroll-foot {
+#example-table3_wrapper .dt-scroll-body, #example-table3_wrapper .dt-scroll-head, #example-table3_wrapper .dt-scroll-foot, #example-table6_wrapper .dt-scroll-body, #example-table6_wrapper .dt-scroll-head, #example-table6_wrapper .dt-scroll-foot {
   padding: 0 0 0 40px;
 }
 
@@ -624,4 +628,9 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
 .nav-tabs {
   border: none;
   border-radius: 0;
+}
+
+.content-box-current table th, .content-box-current table td {
+  width: 150px;
+  min-width: 150px;
 }

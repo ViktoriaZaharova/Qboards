@@ -249,6 +249,54 @@ $('#example-table5').DataTable({
   }
 });
 
+$('#example-table6').DataTable({
+  select: true,
+  info: false,
+  scrollCollapse: true,
+  scrollX: 'auto',
+  paging: false,
+  language: {
+    search: '',
+    url: 'js/ru.json',
+    paginate: {
+      previous: '',
+      next: ''
+    }
+  },
+  layout: {
+    topStart: null,
+    topEnd: null,
+    bottomStart: null,
+    bottomEnd: null
+  },
+  // initComplete: function () {
+  //   this.api()
+  //     .columns()
+  //     .every(function () {
+  //       var column = this;
+
+  //       // Создание выпадающего списка select и обработчика событий
+  //       var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
+  //         .appendTo($(column.footer()).empty())
+  //         .on('change', function () {
+  //           column
+  //             .search($(this).val(), { exact: true })
+  //             .draw();
+  //         });
+
+  //       // Добавление списка уникальных значений в options
+  //       column
+  //         .data()
+  //         .unique()
+  //         .sort()
+  //         .each(function (d, j) {
+  //           select.append('<option value="' + d + '">' + d + '</option>');
+  //         });
+  //     });
+  // }
+});
+
+
 // calendar
 $(function () {
   //Сменим язык календаря на русский
