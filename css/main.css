@@ -634,3 +634,13 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
   width: 150px;
   min-width: 150px;
 }
+
+.content-box-positions table th, .content-box-positions table td {
+  width: 140px;
+  min-width: 140px;
+}
+
+.content-box-translation table th, .content-box-translation table td {
+  width: 120px;
+  min-width: 120px;
+}

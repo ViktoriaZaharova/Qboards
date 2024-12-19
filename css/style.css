@@ -217,12 +217,17 @@ button:hover, button:focus, .btn:hover, .btn:focus {
   margin: 0 0 0 12px;
 }
 
+.btn-group {
+  flex-wrap: wrap;
+}
 .btn-group .btn {
+  width: -moz-fit-content;
+  width: fit-content;
   white-space: nowrap;
-  margin: 0 30px 0 0;
+  margin: 0 30px 5px 0;
 }
 .btn-group .btn:last-child {
-  margin: 0;
+  margin: 0 0 5px;
 }
 
 .btn-group > .btn-group:not(:last-child) > .btn, .btn-group > .btn.dropdown-toggle-split:first-child, .btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
@@ -230,7 +235,6 @@ button:hover, button:focus, .btn:hover, .btn:focus {
 }
 
 .btn-group > .btn-group:not(:first-child), .btn-group > :not(.btn-check:first-child) + .btn {
-  margin: 0;
   border-radius: 20px;
 }
 
@@ -671,12 +675,11 @@ h1, .h1, h2, .h2 {
 }
 
 .select-my {
-  width: 116px;
   border: 1px solid #EAF3FF;
   border-radius: 20px;
-  background: #fff url("../img/select-table.svg") no-repeat calc(100% - 20px) center;
+  background: #fff url("../img/select-table.svg") no-repeat calc(100% - 15px) center;
   background-size: 11px;
-  padding: 20px 43px 20px 20px;
+  padding: 20px 35px 20px 20px;
   color: #1D1D1B;
 }
 .select-my:hover, .select-my:focus {

@@ -327,3 +327,9 @@ $('.dropdown-menu .btn-apply').on('click', function(e){
   e.preventDefault();
   $(this).parents('.dropdown-menu').removeClass('show');
 });
+
+$('[data-bs-toggle="tab"]').on('shown.bs.tab', function (event) {
+  $('.dataTable').DataTable()
+    .columns.adjust();
+    // .responsive.recalc();
+} );
