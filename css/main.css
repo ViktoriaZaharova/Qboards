@@ -126,6 +126,10 @@
   max-width: 80px;
   width: -moz-fit-content;
   width: fit-content;
+  color: #1D1D1B;
+}
+.admin-box__name:hover {
+  color: #0047AB;
 }
 
 .content-box-diagram {
@@ -148,6 +152,14 @@
 
 #chartdiv3 {
   height: 544px;
+}
+
+#chartdiv4 {
+  height: 580px;
+}
+
+#chartdiv5 {
+  height: 410px;
 }
 
 .filter-wrapper {
@@ -399,12 +411,12 @@ tfoot {
   padding: 40px 0 20px !important;
 }
 
-#example-table1_wrapper .dt-scroll, .content-box-clients .dt-scroll, .content-box-translation .dt-scroll {
+#example-table1_wrapper .dt-scroll, .content-box-clients .dt-scroll, .content-box-translation .dt-scroll, .table-reverse-footer .dt-scroll {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-#example-table1_wrapper .dt-scroll-foot, .content-box-clients .dt-scroll-foot, .content-box-translation .dt-scroll-foot {
+#example-table1_wrapper .dt-scroll-foot, .content-box-clients .dt-scroll-foot, .content-box-translation .dt-scroll-foot, .table-reverse-footer .dt-scroll-foot {
   order: -1;
 }
 
@@ -628,6 +640,31 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
 .nav-tabs {
   border: none;
   border-radius: 0;
+}
+.nav-tabs .nav-link {
+  background: #EAF3FF;
+  color: #0047AB;
+  border: 1px solid #EAF3FF;
+}
+.nav-tabs .nav-link:hover {
+  background: #6DABFF;
+  border-color: #6DABFF;
+  color: #fff;
+}
+.nav-tabs .nav-link:focus {
+  background: #0047AB;
+  color: #fff;
+  border-color: #0047AB;
+}
+.nav-tabs .nav-link.active {
+  border: 1px solid #0047AB;
+  background: #fff;
+  color: #1D1D1B;
+}
+.nav-tabs .nav-link.active:hover {
+  background: #6DABFF;
+  border-color: #6DABFF;
+  color: #fff;
 }
 
 .content-box-current table th, .content-box-current table td {

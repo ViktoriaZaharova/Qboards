@@ -97,6 +97,9 @@
   &__name
     max-width: 80px
     width: fit-content
+    color: $black
+    &:hover
+      color: $blue
 
 // content  
 .content-box-diagram
@@ -115,6 +118,12 @@
 
 #chartdiv3
   height: 544px
+
+#chartdiv4
+  height: 580px  
+
+#chartdiv5
+  height: 410px  
 
 .filter-wrapper
   width: 100%
@@ -320,7 +329,7 @@ tfoot
       th
         padding: 40px 0 20px !important
 
-#example-table1_wrapper, .content-box-clients, .content-box-translation
+#example-table1_wrapper, .content-box-clients, .content-box-translation, .table-reverse-footer
   .dt-scroll
     width: 100%
     display: flex
@@ -514,6 +523,26 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
 .nav-tabs
   border: none
   border-radius: 0
+  .nav-link
+    background: #EAF3FF
+    color: $blue
+    border: 1px solid #EAF3FF
+    &:hover
+      background: #6DABFF
+      border-color: #6DABFF
+      color: #fff
+    &:focus
+      background: $blue
+      color: #fff
+      border-color: $blue
+    &.active
+      border: 1px solid $blue
+      background: #fff
+      color: $black
+      &:hover
+        background: #6DABFF
+        border-color: #6DABFF
+        color: #fff
 
 .content-box-current
   table
@@ -532,3 +561,5 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
     th, td
       width: 120px
       min-width: 120px
+
+

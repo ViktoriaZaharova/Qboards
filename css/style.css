@@ -351,6 +351,10 @@ h1, .h1, h2, .h2 {
   margin-bottom: 20px;
 }
 
+.mb-30 {
+  margin-bottom: 30px;
+}
+
 .mb-55 {
   margin-bottom: 55px;
 }
@@ -372,12 +376,35 @@ h1, .h1, h2, .h2 {
   margin: 20px auto 0;
   font-size: 20px;
 }
+.content-box__head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.content-box__head .btn-group {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
 
 .content-box-table {
   padding: 25px 12px 45px 25px;
 }
 .content-box-table thead {
   font-weight: 500;
+}
+
+.link-display {
+  margin: 0 20px 0 0;
+  font-size: 16px;
+}
+
+.color-blue {
+  color: #0047AB;
+}
+.color-blue:hover {
+  color: #6DABFF;
 }
 
 .container {
@@ -683,7 +710,7 @@ h1, .h1, h2, .h2 {
   color: #1D1D1B;
 }
 .select-my:hover, .select-my:focus {
-  background: #fff url("../img/select-table.svg") no-repeat calc(100% - 20px) center;
+  background: #fff url("../img/select-table.svg") no-repeat calc(100% - 15px) center;
   background-size: 11px;
 }
 

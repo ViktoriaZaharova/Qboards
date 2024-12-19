@@ -243,6 +243,9 @@ h1, .h1, h2, .h2
 .mb-20
   margin-bottom: 20px
 
+.mb-30
+  margin-bottom: 30px
+
 .mb-55
   margin-bottom: 55px
 
@@ -260,11 +263,29 @@ h1, .h1, h2, .h2
     font-weight: bold
     margin: 20px auto 0
     font-size: 20px
+  &__head
+    width: 100%
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    .btn-group
+      margin-left: auto
+      display: flex
+      align-items: center  
 
 .content-box-table
   padding: 25px 12px 45px 25px
   thead
     font-weight: 500
+
+.link-display
+  margin: 0 20px 0 0
+  font-size: 16px
+
+.color-blue
+  color: $blue
+  &:hover
+    color: $blue-hover      
 
 .container
   max-width: none
@@ -526,7 +547,7 @@ h1, .h1, h2, .h2
   padding: 20px 35px 20px 20px
   color: #1D1D1B
   &:hover, &:focus
-    background: #fff url('../img/select-table.svg') no-repeat calc( 100% - 20px ) center
+    background: #fff url('../img/select-table.svg') no-repeat calc( 100% - 15px ) center
     background-size: 11px
 
 .form-search

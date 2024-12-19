@@ -66,8 +66,8 @@
           </div>
 
           <div class="admin-box">
-            <div class="admin-box__photo"><img src="img/admin-photo.jpg" alt=""></div>
-            <div class="admin-box__name">Петр Иванов</div>
+            <a href="cabinet.html" class="admin-box__photo"><img src="img/admin-photo.jpg" alt=""></a>
+            <a href="cabinet.html" class="admin-box__name">Петр Иванов</a>
             <a href="#" class="admin-box__exit"><svg class="svg-icon">
                 <use xlink:href="img/sprite.svg#exit-icon"></use>
               </svg>
@@ -87,10 +87,10 @@
               </div>
               <div class="content-row">
                 <div class="btn-group nav-tabs" role="tablist">
-                  <button class="active btn btn-md btn-white" id="reports-nav-tab1" data-bs-toggle="tab"
+                  <button class="active btn btn-md btn-white nav-link" id="reports-nav-tab1" data-bs-toggle="tab"
                     data-bs-target="#reports-tab1" type="button" role="tab" aria-controls="reports-tab1"
                     aria-selected="true">Отчеты</button>
-                  <button class="btn btn-md btn-light-blue" id="reports-nav-tab2" data-bs-toggle="tab"
+                  <button class="btn btn-md btn-white nav-link" id="reports-nav-tab2" data-bs-toggle="tab"
                     data-bs-target="#reports-tab2" type="button" role="tab" aria-controls="reports-tab2"
                     aria-selected="false">Групповой отчет</button>
                 </div>
@@ -110,15 +110,15 @@
                     aria-labelledby="reports-nav-tab1" tabindex="0">
 
                     <div class="btn-group">
-                      <a href="#" class="btn btn-md btn-light-blue width-auto">Выгрузить выбранные отчеты в CSV <svg
+                      <a href="#" class="btn btn-md btn-light-blue width-auto"><span>Выгрузить выбранные отчеты в CSV</span> <svg
                           class="svg-icon">
                           <use xlink:href="img/sprite.svg#download-icon"></use>
                         </svg></a>
-                      <a href="#" class="btn btn-md btn-light-blue width-auto">Выгрузить отчеты в PDF <svg
+                      <a href="#" class="btn btn-md btn-light-blue width-auto"><span>Выгрузить отчеты в PDF</span> <svg
                           class="svg-icon">
                           <use xlink:href="img/sprite.svg#download-icon"></use>
                         </svg></a>
-                      <a href="#" class="btn btn-md btn-light-blue width-auto">Выгрузить отчеты в PDF (с комиссией) <svg
+                      <a href="#" class="btn btn-md btn-light-blue width-auto"><span>Выгрузить отчеты в PDF (с комиссией)</span> <svg
                           class="svg-icon">
                           <use xlink:href="img/sprite.svg#download-icon"></use>
                         </svg></a>
@@ -148,6 +148,13 @@
                           <td>12.12.2023</td>
                         </tr>
                       </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Имя клиента</th>
+                          <th>Название отчета </th>
+                          <th>Дата отчета</th>
+                        </tr>
+                      </tfoot>
                     </table>
                   </div>
                   <div class="tab-pane fade" id="reports-tab2" role="tabpanel" aria-labelledby="reports-nav-tab2"
@@ -318,6 +325,18 @@
                           <td>1344</td>
                         </tr>
                       </tbody>
+                      <tfoot>
+                        <tr>
+                          <th>Name</th>
+                          <th>Product</th>
+                          <th>RP</th>
+                          <th>HWM</th>
+                          <th>BLNC</th>
+                          <th>NET</th>
+                          <th>AGR</th>
+                          <th>HMWDT</th>
+                        </tr>
+                      </tfoot>
                     </table>
                   </div>
 
@@ -334,6 +353,7 @@
   <!-- add plugins js-->
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-ui.js"></script>
+  <script src="js/jquery.datepicker.extension.range.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dataTables.js"></script>
   <script src="js/dataTables.bootstrap5.js"></script>

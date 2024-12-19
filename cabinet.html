@@ -39,7 +39,7 @@
         <a href="index.html" class="logo"><img src="img//logo.svg" alt=""></a>
         <nav class="nav-menu">
           <ul class="menu my-ul">
-            <li class="nav-item"><a href="index.html" class="nav-link">Графики активов (AUM)</a>
+            <li class="nav-item"><a href="index.html" class="nav-link active">Графики активов (AUM)</a>
 
             </li>
             <li class="nav-item"><a href="client-list.html" class="nav-link">Клиенты</a>
@@ -77,87 +77,380 @@
       </div>
     </div>
 
-    <div class="content content-translation">
+    <div class="content">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <div class="content-head">
-              <h1>Трансферы и изменения HWM</h1>
-            </div>
-            <div class="content-row mb-35">
-              <div class="btn-group">
-                <a href="client-list.html" class="btn btn-md btn-white">Список клиентов</a>
-                <a href="translations.html" class="btn btn-md btn-light-blue">Переводы & HWMs</a>
+          <div class="col-12 mb-55">
+
+            <div class="content-box content-box-cabinet">
+              <div class="content-box-cabinet__head">
+
               </div>
-              <a href="#" class="btn-filter"><svg class="svg-icon">
-                  <use xlink:href="img/sprite.svg#filter-icon"></use>
-                </svg></a>
+              <div class="content-box-cabinet__body"></div>
             </div>
 
-            <div class="filter-wrapper">
-              <div class="filter-wrapper__head">
-                <h3>фильтры</h3>
-                <a href="#" class="btn btn-filter-close btn-md btn-white">отмена</a>
-              </div>
-              <div class="filter-box filter-box-period">
-                <input type="text" class="datepicker1 datepicker" placeholder="Выбор периода">
-                <svg class="svg-icon">
-                  <use xlink:href="img/sprite.svg#calendar-icon"></use>
-                </svg>
-              </div>
 
-              <div class="filter-box">
-                <p>Выбор клиента</p>
-                <div class="dropdown dropdown-filter">
-                  <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Клиент
-                    1</a>
-                  <div class="dropdown-menu">
-                    <div class="dropdown-scroll-horizontal">
-                      <div class="dropdown-scroll-horizontal__body">
-                        <label class="label-checkbox">
-                          <input type="checkbox" name="checkbox1" checked>
-                          <span class="label-checkbox__custom"></span>
-                          <span class="label-checkbox__text">Клиент 1</span>
-                        </label>
-                        <label class="label-checkbox">
-                          <input type="checkbox" name="checkbox1">
-                          <span class="label-checkbox__custom"></span>
-                          <span class="label-checkbox__text">Клиент 1</span>
-                        </label>
-                        <label class="label-checkbox">
-                          <input type="checkbox" name="checkbox1">
-                          <span class="label-checkbox__custom"></span>
-                          <span class="label-checkbox__text">Клиент 1</span>
-                        </label>
-                        <label class="label-checkbox">
-                          <input type="checkbox" name="checkbox1">
-                          <span class="label-checkbox__custom"></span>
-                          <span class="label-checkbox__text">Клиент 1</span>
-                        </label>
-                        <a href="#" class="btn btn-blue btn-apply">применить</a>
-                      </div>
-                    </div>
-                  </div>
+          </div>
+
+          <div class="col-12 mb-55">
+            <div class="content-box content-box-portfolio">
+              <div class="content-box__head">
+                <div class="h2">Просадка</div>
+                <div class="btn-group">
+                  <a href="#" class="color-blue link-display">Отображать</a>
+                  <a href="#" class="btn btn-md btn-white">Просадка</a>
                 </div>
               </div>
-              <a href="#" class="btn btn-md btn-light-blue width-auto"><span>Выгрузить CSV</span> <svg class="svg-icon">
-                  <use xlink:href="img/sprite.svg#download-icon"></use>
-                </svg></a>
 
-
-              <div class="filter-category">
-                <h3>Заголовок</h3>
-                <ul class="filter-list-items my-ul">
-                  <li><a href="#" class="btn btn-md btn-white">EQUITY+MAX DD</a></li>
-                  <li><a href="#" class="btn btn-md btn-light-blue">COUNTERS & TURNOVER</a></li>
-                  <li><a href="#" class="btn btn-md btn-light-blue">FUNDING & TRADING FEES</a></li>
-                  <li><a href="#" class="btn btn-md btn-light-blue">PNL</a></li>
-                  <li><a href="#" class="btn btn-md btn-light-blue">SLIPPAGE</a></li>
-                </ul>
-              </div>
-              <a href="#" class="btn btn-md btn-accent btn-apply-filters">применить фильтры</a>
+              <div id="chartdiv5" class="chartdiv"></div>
             </div>
+          </div>
 
+          <div class="col-12 mb-55">
+            <div class="content-box content-box-portfolio">
+              <div class="content-box__head">
+                <div class="h2">Загрузка портфеля</div>
+                <div class="btn-group">
+                  <a href="#" class="color-blue link-display">Отображать</a>
+                  <a href="#" class="btn btn-md btn-white">Просадка</a>
+                </div>
+              </div>
+              <div id="chartdiv4" class="chartdiv"></div>
+            </div>
+          </div>
+
+          <div class="col-12 mb-55">
+            <div class="content-box content-box-open-positions table-reverse-footer">
+              <div class="h2 w-100 mb-20">Открытые позиции</div>
+
+              <table id="example-table7" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Инструмент</th>
+                    <th>Дата Входа</th>
+                    <th>Объем</th>
+                    <th>Цена</th>
+                    <th>PnL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ETH</td>
+                    <td>0,323</td>
+                    <td>ETH</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BTC</td>
+                    <td>0,323</td>
+                    <td>BTC</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>USDT</td>
+                    <td>0,323</td>
+                    <td>USDT</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Инструмент</th>
+                    <th>Дата Входа</th>
+                    <th>Объем</th>
+                    <th>Цена</th>
+                    <th>PnL</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-12 mb-55">
+            <div class="content-box content-box-transactions table-reverse-footer">
+              <div class="h2 w-100 mb-20">Сделки за 3 дня</div>
+
+              <table id="example-table8" class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Инструмент</th>
+                    <th>Дата Входа</th>
+                    <th>Объем</th>
+                    <th>Цена</th>
+                    <th>PnL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ETH</td>
+                    <td>0,323</td>
+                    <td>ETH</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BTC</td>
+                    <td>0,323</td>
+                    <td>BTC</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>USDT</td>
+                    <td>0,323</td>
+                    <td>USDT</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+
+                  <tr>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>SOL</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>BNB</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>RUR</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                  <tr>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>DOGE</td>
+                    <td>0,323</td>
+                    <td>1344</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Инструмент</th>
+                    <th>Дата Входа</th>
+                    <th>Объем</th>
+                    <th>Цена</th>
+                    <th>PnL</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="content-head">
+              <div class="h2 w-100">Трансферы и изменения HWM по соглашению</div>
+            </div>
             <div class="content-body">
               <div class="row">
                 <div class="col-12 col-xxl-6 mb-35">
@@ -543,21 +836,19 @@
   <script src="js/jquery-ui.js"></script>
   <script src="js/jquery.datepicker.extension.range.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dataTables.js"></script>
-  <script src="js/dataTables.bootstrap5.js"></script>
   <script src="js/index.js"></script>
   <script src="js/percent.js"></script>
   <script src="js/xy.js"></script>
   <script src="js/ru_RU.js"></script>
   <script src="js/Animated.js"></script>
   <script src="js/Responsive.js"></script>
-
+  <script src="js/dataTables.js"></script>
+  <script src="js/dataTables.bootstrap5.js"></script>
   <!-- add plugins js end-->
 
   <script src="js/common.js"></script>
-
-
-
+  <script src="js/cabinet-diagram.js"></script>
+  
 </body>
 
 </html>
