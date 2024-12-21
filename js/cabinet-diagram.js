@@ -361,8 +361,8 @@ am5.ready(function() {
   // Add legend
   // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
   var legend = chart.rightAxesContainer.children.push(am5.Legend.new(root, {
-    width: 200,
-    paddingLeft: 15,
+    width: 75,
+    paddingLeft: 10,
     height: am5.percent(100)
   }));
   

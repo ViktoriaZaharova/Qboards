@@ -460,7 +460,17 @@ $('.products-clients-slider').slick({
   variableWidth: true,
   asNavFor: '.products-clients-details-slider',
   nextArrow: '<button type="button" class="slick-next"></button>',
-  prevArrow: '<button type="button" class="slick-prev"></button>'
+  prevArrow: '<button type="button" class="slick-prev"></button>',
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        arrows: false,
+        infinite: true,
+        slidesToShow: 1
+      }
+    }
+  ]
 });
 
 $('.products-clients-details-slider').slick({
@@ -469,4 +479,14 @@ $('.products-clients-details-slider').slick({
   fade: true,
   arrows: false,
   infinite: false,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        arrows: false,
+        infinite: true,
+        slidesToShow: 1
+      }
+    }
+  ]
 });

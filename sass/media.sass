@@ -23,6 +23,32 @@
     width: calc( 100% - 340px )
     padding: 50px 30px
 
+  .content-box
+    padding: 30px 40px
+
+  .dynamics-row
+    flex-wrap: wrap
+    margin: 0 0 40px
+    .filter-wrapper
+      width: 100%
+
+  .filter-box-period-cabinet
+    margin: 0 0 10px
+
+  .content-box-cabinet__body
+    margin: 34px 0 0
+    padding: 0
+
+  .products-clients-table
+    padding: 0
+
+  .content-box__head
+    .h2
+      width: 100%
+
+    .btn-group
+      margin: 10px 0 0
+
 @media only screen and (max-width: 1440px)
   .sidebar-menu
     padding: 23px 38px 36px 75px
@@ -110,6 +136,23 @@
     .form-search
       margin: 10px 0 0
 
+  .dynamics-row
+    align-items: center
+    .btn-filter
+      margin: 0 23px 0 0
+      border: 1px solid #0047AB
+
+  .mb-40
+    margin-bottom: 12px
+
+  .content-box-cabinet
+    margin: 0 0 36px
+    &:last-child
+      margin: 0 0 36px
+
+  .filter-box-period-cabinet
+    margin: 10px 0 20px   
+
 @media only screen and (max-width: 992px)
   div.dt-container div.dt-paging
     display: none
@@ -135,6 +178,48 @@
 
   .content-box
     padding: 30px 20px
+
+  .agreement-number, .client-balance
+    strong
+      font-size: 20px
+
+  .content-box-cabinet__head
+    align-items: flex-start
+
+  .client-info
+    flex-wrap: wrap
+    &__name
+      width: 100%
+
+  .agreement-number
+    margin: 7px 0 0
+
+  .products-clients__head
+    flex-wrap: wrap
+    .h2
+      width: 100%
+      max-width: 100%
+      margin: 0 0 30px
+      display: flex
+      align-items: center
+      &::after
+        content: ''
+        margin-left: auto
+        width: 29px
+        height: 32px
+        min-width: 29px
+        background: url('../img/hand.svg') no-repeat center
+        background-size: 100%
+
+  .products-clients-slider
+    padding: 0
+    max-width: none
+    width: calc( 100% + 20px )
+
+  .products-clients-table__item
+    font-size: 14px
+    p
+      font-size: 20px
 
 @media only screen and (max-width: 768px)
   h1, .h1, h2, .h2
@@ -198,6 +283,46 @@
         width: 100%
         text-align: center
 
+  .btn-md
+    height: 50px
+
+  .products-clients-table__item
+    width: 50%
+    &:nth-child(odd)
+      border-left: 1px solid #6DABFF
+
+  .agreement-number, .client-balance
+    flex-direction: column
+    align-items: flex-start
+    strong
+      margin: 7px 0 0
+
+  .products-clients__head .h2
+    margin: 0 0 20px
+
+  .dynamics-row
+    flex-wrap: nowrap
+
+  .btn-download-report
+    white-space: normal
+    height: 80px
+
+  .btn-group .btn
+    margin-right: 16px
+
+  .content-box-filter p
+    width: 100%
+    margin: 0 0 16px
+
+  .graphic-type
+    align-items: flex-start
+    flex-wrap: wrap
+    p
+      margin: 0 0 10px
+      width: 100%
+    .btn-group
+      width: 100%    
+
 @media only screen and (max-width: 480px)
 
 @media only screen and (max-width: 420px)
@@ -217,7 +342,24 @@
 
   .ui-datepicker.ui-widget.ui-widget-content
     width: 270px
-    padding: 15px 
+    padding: 15px
+
+  .btn-download-report
+    align-items: flex-start
+
+  #chartdiv4
+    height: 400px
+
+  .graphic-type
+    .btn
+      width: 100%
+      margin: 0 0 7px
+
+  .filter-box-period-cabinet
+    width: 100%
+    input
+      width: 100%
+      text-align: center      
 
 @media only screen and (max-width: 370px)
   .btn-filter
@@ -236,3 +378,8 @@
       margin: 0 0 10px
       &:last-child
         margin: 0
+
+  .products-clients-table__item
+    padding: 16px
+    p
+      font-size: 16px

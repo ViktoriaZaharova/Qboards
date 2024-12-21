@@ -606,7 +606,6 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
     width: 100%
     display: flex
     align-items: center
-    flex-wrap: wrap
   &__body
     margin: 60px 0 0
     width: 100%
@@ -627,6 +626,7 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
 .client-info
   display: flex
   align-items: center
+  width: 100%
   &__avatar
     @include d-flex
     width: 80px
@@ -659,25 +659,25 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
     align-items: stretch
     flex-wrap: wrap
     &:first-child
-      .products-clients-table__item
-        border-top: 1px solid $blue
+
+      border-top: 1px solid $blue-hover
   &__item
     width: 25%
-    border-right: 1px solid $blue
-    border-bottom: 1px solid $blue
+    border-right: 1px solid $blue-hover
+    border-bottom: 1px solid $blue-hover
     padding: 20px
     font-size: 16px
     display: flex
     flex-direction: column
     &:first-child
-      border-left: 1px solid $blue
+      border-left: 1px solid $blue-hover
     span
       display: block
-      margin: 0 0 auto  
+      margin: 0 0 auto
     p
       font-weight: bold
       font-size: 24px
-      margin: 10px 0 0 
+      margin: 10px 0 0
 
 .products-clients
   width: 100%
@@ -689,7 +689,6 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
     margin: 0 0 40px
     .h2
       max-width: 160px
-
 
 .products-clients-slider
   padding: 0 30px
@@ -703,5 +702,8 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
       color: $black
       &:hover
         background: $blue
-        color: #fff  
+        color: #fff
 
+.content-box-filter
+  p
+    margin: 0 20px 0 0

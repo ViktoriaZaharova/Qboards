@@ -737,7 +737,6 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
   width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 .content-box-cabinet__body {
   margin: 60px 0 0;
@@ -762,6 +761,7 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
 .client-info {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 .client-info__avatar {
   display: flex;
@@ -802,20 +802,20 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
   align-items: stretch;
   flex-wrap: wrap;
 }
-.products-clients-table__tr:first-child .products-clients-table__item {
-  border-top: 1px solid #0047AB;
+.products-clients-table__tr:first-child {
+  border-top: 1px solid #6DABFF;
 }
 .products-clients-table__item {
   width: 25%;
-  border-right: 1px solid #0047AB;
-  border-bottom: 1px solid #0047AB;
+  border-right: 1px solid #6DABFF;
+  border-bottom: 1px solid #6DABFF;
   padding: 20px;
   font-size: 16px;
   display: flex;
   flex-direction: column;
 }
 .products-clients-table__item:first-child {
-  border-left: 1px solid #0047AB;
+  border-left: 1px solid #6DABFF;
 }
 .products-clients-table__item span {
   display: block;
@@ -856,4 +856,8 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
 .products-clients-slider .slick-current .products-clients-slider__item:hover {
   background: #0047AB;
   color: #fff;
+}
+
+.content-box-filter p {
+  margin: 0 20px 0 0;
 }
