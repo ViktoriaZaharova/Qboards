@@ -452,3 +452,21 @@ $('[data-bs-toggle="tab"]').on('shown.bs.tab', function (event) {
     .columns.adjust();
   // .responsive.recalc();
 });
+
+$('.products-clients-slider').slick({
+  slidesToShow: 1,
+  focusOnSelect: true,
+  infinite: false,
+  variableWidth: true,
+  asNavFor: '.products-clients-details-slider',
+  nextArrow: '<button type="button" class="slick-next"></button>',
+  prevArrow: '<button type="button" class="slick-prev"></button>'
+});
+
+$('.products-clients-details-slider').slick({
+  slidesToShow: 1,
+  swipe: false,
+  fade: true,
+  arrows: false,
+  infinite: false,
+});

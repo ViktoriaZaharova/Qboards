@@ -120,10 +120,13 @@
   height: 544px
 
 #chartdiv4
-  height: 580px  
+  height: 580px
 
 #chartdiv5
-  height: 410px  
+  height: 410px
+
+#chartdiv6
+  height: 400px
 
 .filter-wrapper
   width: 100%
@@ -562,4 +565,143 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
       width: 120px
       min-width: 120px
 
+// cabinet page
+.dynamics-row
+  width: 100%
+  display: flex
+  align-items: start
+
+.graphic-type
+  display: flex
+  align-items: center
+  margin-right: auto
+  p
+    color: $blue
+    margin: 0 30px 0 0
+
+.btn-graphic-type
+  &.active
+    background: #fff
+    border: 1px solid $blue
+    &:hover
+      background: $blue
+      color: #fff
+
+.filter-box-period-cabinet
+  input
+    background: #fff
+    border: 1px solid #EAF3FF
+    color: $black
+    &::placeholder
+      color: $black
+
+.btn-download-report
+  white-space: nowrap
+
+.content-box-cabinet
+  margin: 0 0 85px
+  &:last-child
+    margin: 0 0 85px
+  &__head
+    width: 100%
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+  &__body
+    margin: 60px 0 0
+    width: 100%
+    padding: 0 0 0 100px
+
+.agreement-number
+  display: flex
+  align-items: center
+  margin-left: auto
+  font-size: 20px
+  strong
+    font-size: 24px
+    text-transform: uppercase
+    color: $blue
+    font-weight: bold
+    margin: 0 0 0 7px
+
+.client-info
+  display: flex
+  align-items: center
+  &__avatar
+    @include d-flex
+    width: 80px
+    height: 80px
+    min-width: 80px
+    overflow: hidden
+    border-radius: 50%
+    margin: 0 20px 0 0
+  .h2
+    color: $black
+
+.client-balance
+  display: flex
+  align-items: center
+  margin: 7px 0 0
+  font-size: 20px
+  strong
+    font-weight: bold
+    color: $blue
+    text-transform: uppercase
+    margin: 0 0 0 7px
+    font-size: 24px
+
+.products-clients-table
+  width: 100%
+  padding: 0 98px 0 0
+  &__tr
+    width: 100%
+    display: flex
+    align-items: stretch
+    flex-wrap: wrap
+    &:first-child
+      .products-clients-table__item
+        border-top: 1px solid $blue
+  &__item
+    width: 25%
+    border-right: 1px solid $blue
+    border-bottom: 1px solid $blue
+    padding: 20px
+    font-size: 16px
+    display: flex
+    flex-direction: column
+    &:first-child
+      border-left: 1px solid $blue
+    span
+      display: block
+      margin: 0 0 auto  
+    p
+      font-weight: bold
+      font-size: 24px
+      margin: 10px 0 0 
+
+.products-clients
+  width: 100%
+  max-width: 1120px
+  &__head
+    width: 100%
+    display: flex
+    align-items: center
+    margin: 0 0 40px
+    .h2
+      max-width: 160px
+
+
+.products-clients-slider
+  padding: 0 30px
+  max-width: 560px
+  .slick-slide
+    margin: 0 20px 0 0
+  .slick-current
+    .products-clients-slider__item
+      border: 1px solid $blue
+      background: #fff
+      color: $black
+      &:hover
+        background: $blue
+        color: #fff  
 

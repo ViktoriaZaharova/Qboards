@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/dataTables.bootstrap5.css">
+  <link rel="stylesheet" href="css/slick.css">
   <!-- add plugins css end -->
 
   <link rel="stylesheet" href="css/style.css">
@@ -80,16 +81,337 @@
     <div class="content">
       <div class="container">
         <div class="row">
-          <div class="col-12 mb-55">
+          <div class="col-12">
 
             <div class="content-box content-box-cabinet">
               <div class="content-box-cabinet__head">
-
+                <div class="client-info">
+                  <div class="client-info__avatar"><img src="img/admin-photo.jpg" alt=""></div>
+                  <div class="client-info__name">
+                    <div class="h2">Петр Иванов</div>
+                    <div class="client-balance">
+                      <p>Сумма всех активов</p>
+                      <strong>2442 USDT</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="agreement-number">
+                  <p>Номер соглашения:</p>
+                  <strong>12412556</strong>
+                </div>
               </div>
-              <div class="content-box-cabinet__body"></div>
+              <div class="content-box-cabinet__body">
+                <div class="products-clients">
+                  <div class="products-clients__head">
+                    <div class="h2">Продукты клиента</div>
+                    <div class="slick-slider products-clients-slider">
+                      <div class="slide">
+                        <div class="products-clients-slider__item btn btn-md btn-light-blue">TREND USDT (№ 01391-1)
+                        </div>
+                      </div>
+
+                      <div class="slide">
+                        <div class="products-clients-slider__item btn btn-md btn-light-blue">TREND USDT (№ 01391-1)
+                        </div>
+                      </div>
+
+                      <div class="slide">
+                        <div class="products-clients-slider__item btn btn-md btn-light-blue">TREND USDT (№ 01391-1)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="products-clients__body">
+                    <div class="slick-slider products-clients-details-slider">
+                      <div class="slide">
+                        <div class="products-clients-table">
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Номер договора</span>
+                              <p>0323</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Дата старта</span>
+                              <p>24.02.2022</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Биржа/брокер</span>
+                              <p>Moex</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>ID на бирже</span>
+                              <p>1235252</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Валюта</span>
+                              <p>BTC</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>HWM</span>
+                              <p>2232$</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Риск-профиль</span>
+                              <p>30%</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Hurdle rate</span>
+                              <p>999</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Management <br>
+                                Fee</span>
+                              <p>999</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Performance <br>
+                                Fee</span>
+                              <p>999</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в базовой валюте (net)</span>
+                              <p>1.80 M</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в базовой валюте</span>
+                              <p>30%</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в USDT <br>(net)</span>
+                              <p>2534</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Доходность в процентах <br>за все время</span>
+                              <p>24%</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Доходность в процентах <br>за все время carg</span>
+                              <p>24%</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slide">
+                        <div class="products-clients-table">
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Номер договора</span>
+                              <p>0123</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Дата старта</span>
+                              <p>20.02.2022</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Биржа/брокер</span>
+                              <p>Moex</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>ID на бирже</span>
+                              <p>1235252</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Валюта</span>
+                              <p>BTC</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>HWM</span>
+                              <p>2232$</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Риск-профиль</span>
+                              <p>30%</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Hurdle rate</span>
+                              <p>999</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Management <br>
+                                Fee</span>
+                              <p>999</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Performance <br>
+                                Fee</span>
+                              <p>999</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в базовой валюте (net)</span>
+                              <p>1.80 M</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в базовой валюте</span>
+                              <p>30%</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в USDT <br>(net)</span>
+                              <p>2534</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Доходность в процентах <br>за все время</span>
+                              <p>24%</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Доходность в процентах <br>за все время carg</span>
+                              <p>24%</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="slide">
+                        <div class="products-clients-table">
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Номер договора</span>
+                              <p>1003</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Дата старта</span>
+                              <p>12.02.2022</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Биржа/брокер</span>
+                              <p>Moex</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>ID на бирже</span>
+                              <p>1235252</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Валюта</span>
+                              <p>BTC</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>HWM</span>
+                              <p>2232$</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Риск-профиль</span>
+                              <p>30%</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Hurdle rate</span>
+                              <p>999</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Management <br>
+                                Fee</span>
+                              <p>999</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Performance <br>
+                                Fee</span>
+                              <p>999</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в базовой валюте (net)</span>
+                              <p>1.80 M</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в базовой валюте</span>
+                              <p>30%</p>
+                            </div>
+                          </div>
+                          <div class="products-clients-table__tr">
+                            <div class="products-clients-table__item">
+                              <span>Текущий баланс в USDT <br>(net)</span>
+                              <p>2534</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Доходность в процентах <br>за все время</span>
+                              <p>24%</p>
+                            </div>
+                            <div class="products-clients-table__item">
+                              <span>Доходность в процентах <br>за все время carg</span>
+                              <p>24%</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12 mb-55">
+            <h2 class="w-100 color-black mb-40">Динамика показателей портфеля</h2>
+
+            <div class="dynamics-row">
+              <a href="#" class="btn-filter"><svg class="svg-icon">
+                  <use xlink:href="img/sprite.svg#filter-icon"></use>
+                </svg></a>
+
+              <div class="filter-wrapper">
+                <div class="filter-wrapper__head">
+                  <h3>фильтры</h3>
+                  <a href="#" class="btn btn-filter-close btn-md btn-white">отмена</a>
+                </div>
+
+                <div class="graphic-type">
+                  <p>Тип графика</p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-md btn-light-blue active btn-graphic-type">Почасовой</a>
+                    <a href="#" class="btn btn-md btn-light-blue btn-graphic-type">Дневной</a>
+                    <a href="#" class="btn btn-md btn-light-blue btn-graphic-type">Full time (admin)</a>
+                  </div>
+                </div>
+                <div class="filter-box filter-box-period filter-box-period-cabinet">
+                  <input type="text" class="datepicker1 datepicker" placeholder="Выбор периода">
+                  <svg class="svg-icon">
+                    <use xlink:href="img/sprite.svg#arrow-bottom"></use>
+                  </svg>
+                </div>
+
+
+
+                <a href="#" class="btn btn-md btn-accent btn-apply-filters">применить фильтры</a>
+              </div>
+
+              <a href="#" class="btn btn-md btn-light-blue width-auto btn-download-report"><span>Скачать отчет за
+                  выбранный период</span> <svg class="svg-icon">
+                  <use xlink:href="img/sprite.svg#download-icon"></use>
+                </svg></a>
             </div>
 
 
+
+
+            <div class="content-box content-box-profitability">
+              <div class="content-box__head">
+                <div class="h2">Доходность и баланс</div>
+                <div class="btn-group">
+                  <a href="#" class="color-blue link-display">Отображать</a>
+                  <a href="#" class="btn btn-md btn-white">Доходность</a>
+
+                  <a href="#" class="btn btn-md btn-green">Баланс</a>
+                  <a href="#" class="btn btn-md btn-blue">BTC (бенчмарк)</a>
+                </div>
+              </div>
+
+              <div id="chartdiv6" class="chartdiv"></div>
+            </div>
           </div>
 
           <div class="col-12 mb-55">
@@ -844,11 +1166,12 @@
   <script src="js/Responsive.js"></script>
   <script src="js/dataTables.js"></script>
   <script src="js/dataTables.bootstrap5.js"></script>
+  <script src="js/slick.min.js"></script>
   <!-- add plugins js end-->
 
   <script src="js/common.js"></script>
   <script src="js/cabinet-diagram.js"></script>
-  
+
 </body>
 
 </html>

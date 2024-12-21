@@ -153,7 +153,7 @@ button, .btn
   border-radius: 20px
 
 .btn-group>.btn-group:not(:first-child), .btn-group>:not(.btn-check:first-child)+.btn
-  border-radius: 20px  
+  border-radius: 20px
 
 .btn-md
   height: 60px
@@ -194,7 +194,7 @@ button, .btn
     svg
       fill: #fff
   svg
-    fill: $blue  
+    fill: $blue
 
 .btn-white
   background: #fff
@@ -212,6 +212,17 @@ button, .btn
     border-color: $blue-focus
     background: $blue-focus
     color: $blue
+
+.btn-green
+  background: #07AA69
+  color: #fff
+  &:hover
+    color: #fff
+    background: $blue
+  &:focus
+    background: $blue-hover
+    color: #fff
+
 
 .svg-icon
   display: inline-block
@@ -246,6 +257,9 @@ h1, .h1, h2, .h2
 .mb-30
   margin-bottom: 30px
 
+.mb-40
+  margin-bottom: 40px  
+
 .mb-55
   margin-bottom: 55px
 
@@ -268,10 +282,11 @@ h1, .h1, h2, .h2
     display: flex
     align-items: center
     flex-wrap: wrap
+    margin: 0 0 10px
     .btn-group
       margin-left: auto
       display: flex
-      align-items: center  
+      align-items: center
 
 .content-box-table
   padding: 25px 12px 45px 25px
@@ -285,7 +300,10 @@ h1, .h1, h2, .h2
 .color-blue
   color: $blue
   &:hover
-    color: $blue-hover      
+    color: $blue-hover
+
+.color-black
+  color: $black    
 
 .container
   max-width: none
@@ -301,7 +319,7 @@ h1, .h1, h2, .h2
   width: 100%
 
 .width-auto
-  width: fit-content    
+  width: fit-content
 
 .wrapper
   display: flex
@@ -332,7 +350,7 @@ h1, .h1, h2, .h2
   h1, .h1, h2, .h2
     margin-right: 40px
   .form-search
-    margin-left: auto  
+    margin-left: auto
 
 .dropdown
   display: flex
@@ -560,4 +578,33 @@ h1, .h1, h2, .h2
     background-size: 21px
 
 
+// slick slider
+.slick-slider
+  width: 100%
+  
+
+.slick-arrow
+  z-index: 1
+  position: absolute
+  opacity: 1
+  top: 50%
+  transform: translate(0,-50%)
+  border: none
+  border-radius: 0
+  box-shadow: none
+  cursor: pointer
+  width: 16px
+  height: 32px
+  min-width: 16px
+  background: url('../img/arrow-next.svg') no-repeat center
+  background-size: 100%
+  &.slick-disabled
+    opacity: 0
+
+.slick-next
+  right: 0
+
+.slick-prev
+  left: 0
+  transform: translate(0,-50%) scale(-1,1)  
 
