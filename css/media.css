@@ -70,6 +70,15 @@
   .mb-55 {
     margin-bottom: 45px;
   }
+  html, body {
+    height: auto;
+  }
+  .sign-modal {
+    padding: 30px;
+  }
+  .sign-modal .logo {
+    max-width: 200px;
+  }
 }
 @media only screen and (max-width: 1300px) {
   .content {
