@@ -89,7 +89,10 @@
               <div class="btn-group nav-tabs nav-tabs-pc" role="tablist">
                 <button class="active btn btn-md btn-white nav-link" id="reports-nav-tab1" data-bs-toggle="tab"
                   data-bs-target="#reports-tab1" type="button" role="tab" aria-controls="reports-tab1"
-                  aria-selected="true">EQUITY+MAX DD</button>
+                  aria-selected="true">EQUITY</button>
+                  <button class="btn btn-md btn-white nav-link" id="reports-nav-tab1-2" data-bs-toggle="tab"
+                  data-bs-target="#reports-tab1-2" type="button" role="tab" aria-controls="reports-tab1-2"
+                  aria-selected="true">MAX DD</button>
                 <button class="btn btn-md btn-white nav-link" id="reports-nav-tab2" data-bs-toggle="tab"
                   data-bs-target="#reports-tab2" type="button" role="tab" aria-controls="reports-tab2"
                   aria-selected="false">COUNTERS & TURNOVER</button>
@@ -107,8 +110,6 @@
               <a href="#" class="btn btn-md btn-light-blue width-auto"><span>Выгрузить CSV</span> <svg class="svg-icon">
                   <use xlink:href="img/sprite.svg#download-icon"></use>
                 </svg></a>
-
-              
             </div>
 
             <div class="content-box content-box-metrics">
@@ -264,6 +265,147 @@
                   <div id="chartdiv11" class="chartdiv"></div>
 
                   <div id="chartdiv12" class="chartdiv"></div>
+                </div>
+
+                <div class="tab-pane fade" id="reports-tab1-2" role="tabpanel"
+                  aria-labelledby="reports-nav-tab1-2" tabindex="0">
+                  <a href="#" class="btn-filter"><svg class="svg-icon">
+                    <use xlink:href="img/sprite.svg#filter-icon"></use>
+                  </svg></a>
+                  <div class="filter-wrapper">
+                    <div class="filter-wrapper__head">
+                      <h3>фильтры</h3>
+                      <a href="#" class="btn btn-filter-close btn-md btn-white">отмена</a>
+                    </div>
+                    <div class="filter-box filter-box-period">
+                      <input type="text" class="datepicker1 datepicker" placeholder="Выбор периода">
+                      <svg class="svg-icon">
+                        <use xlink:href="img/sprite.svg#calendar-icon"></use>
+                      </svg>
+                    </div>
+
+                    <div class="filter-box">
+                      <p>Клиент</p>
+                      <div class="dropdown dropdown-filter">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                          data-bs-auto-close="outside">Клиент 1</a>
+                        <div class="dropdown-menu">
+                          <div class="dropdown-scroll-horizontal">
+                            <div class="dropdown-scroll-horizontal__body">
+                              <label class="label-checkbox">
+                                <input type="checkbox" name="checkbox1" checked>
+                                <span class="label-checkbox__custom"></span>
+                                <span class="label-checkbox__text">Клиент 1</span>
+                              </label>
+                              <label class="label-checkbox">
+                                <input type="checkbox" name="checkbox1">
+                                <span class="label-checkbox__custom"></span>
+                                <span class="label-checkbox__text">Клиент 1</span>
+                              </label>
+                              <label class="label-checkbox">
+                                <input type="checkbox" name="checkbox1">
+                                <span class="label-checkbox__custom"></span>
+                                <span class="label-checkbox__text">Клиент 1</span>
+                              </label>
+                              <label class="label-checkbox">
+                                <input type="checkbox" name="checkbox1">
+                                <span class="label-checkbox__custom"></span>
+                                <span class="label-checkbox__text">Клиент 1</span>
+                              </label>
+                              <a href="#" class="btn btn-blue btn-apply">применить</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filter-box">
+                      <p>Процент</p>
+                      <div class="dropdown dropdown-filter">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                          data-bs-auto-close="outside">Баланс</a>
+                        <div class="dropdown-menu">
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox2" checked>
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Баланс</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox2">
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Баланс</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox2">
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Баланс</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox2">
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Баланс</span>
+                          </label>
+                          <a href="#" class="btn btn-blue btn-apply">применить</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-box">
+                      <p>Абсолют</p>
+                      <div class="dropdown dropdown-filter">
+                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                          data-bs-auto-close="outside">Нет</a>
+                        <div class="dropdown-menu">
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox4" checked>
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Нет</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox4">
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Да</span>
+                          </label>
+                          <a href="#" class="btn btn-blue btn-apply">применить</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filter-box">
+                      <p>Валюта</p>
+                      <div class="dropdown dropdown-filter">
+                        <a href="#" class="dropdown-toggle disabled" data-bs-toggle="dropdown" disabled
+                          data-bs-auto-close="outside">Валюта 1</a>
+                        <div class="dropdown-menu">
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox3" checked>
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Валюта 1</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox3">
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Валюта 1</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox3">
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Валюта 1</span>
+                          </label>
+                          <label class="label-checkbox">
+                            <input type="checkbox" name="checkbox3">
+                            <span class="label-checkbox__custom"></span>
+                            <span class="label-checkbox__text">Валюта 1</span>
+                          </label>
+                          <a href="#" class="btn btn-blue btn-apply">применить</a>
+                        </div>
+                      </div>
+                    </div>
+
+            
+                    <a href="#" class="btn btn-md btn-accent btn-apply-filters">применить фильтры</a>
+                  </div>
+
+                  <div id="chartdiv13" class="chartdiv"></div>
                 </div>
 
                 <div class="tab-pane fade" id="reports-tab2" role="tabpanel" aria-labelledby="reports-nav-tab2"
@@ -432,7 +574,16 @@
                     <a href="#" class="btn btn-md btn-accent btn-apply-filters">применить фильтры</a>
                   </div>
 
-                  <div id="chartdiv10" class="chartdiv"></div>
+                  <div id="chartdiv10" class="chartdiv mb-30"></div>
+
+                  <div class="row">
+                    <div class="col-12 col-lg-6 mb-30">
+                      <div id="chartdiv14" class="chartdiv"></div>
+                    </div>
+                    <div class="col-12 col-lg-6 mb-30">
+                      <div id="chartdiv15" class="chartdiv"></div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="tab-pane fade" id="reports-tab3" role="tabpanel" aria-labelledby="reports-nav-tab3"

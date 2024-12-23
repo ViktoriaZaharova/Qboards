@@ -154,7 +154,7 @@
   height: 544px;
 }
 
-#chartdiv4, #chartdiv7, #chartdiv8, #chartdiv9, #chartdiv10 {
+#chartdiv4, #chartdiv7, #chartdiv8, #chartdiv9, #chartdiv10, #chartdiv14, #chartdiv15 {
   height: 580px;
 }
 
@@ -166,7 +166,7 @@
   height: 400px;
 }
 
-#chartdiv11 {
+#chartdiv11, #chartdiv13 {
   height: 500px;
 }
 
@@ -1018,7 +1018,7 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
   display: block;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
-  background: #F6F7FA;
+  background: #fff;
 }
 
 .ui-slider-range {
