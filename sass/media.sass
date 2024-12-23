@@ -49,9 +49,6 @@
     .btn-group
       margin: 10px 0 0
 
-
-  
-
 @media only screen and (max-width: 1440px)
   .sidebar-menu
     padding: 23px 38px 36px 75px
@@ -70,14 +67,10 @@
   .mb-55
     margin-bottom: 45px
 
-
-  html, body
-    height: auto
-
   .sign-modal
     padding: 30px
     .logo
-      max-width: 200px  
+      max-width: 200px
 
 @media only screen and (max-width: 1300px)
   .content
@@ -163,7 +156,20 @@
       margin: 0 0 36px
 
   .filter-box-period-cabinet
-    margin: 10px 0 20px   
+    margin: 10px 0 20px
+
+  .nav-tabs-pc
+    display: none
+
+  .filter-box-mobile
+    display: flex
+
+  .filter-wrapper-pc
+    display: none !important
+
+  .tabs-wrap
+    .fade
+      opacity: 1    
 
 @media only screen and (max-width: 992px)
   div.dt-container div.dt-paging
@@ -232,6 +238,12 @@
     font-size: 14px
     p
       font-size: 20px
+
+  #chartdiv4, #chartdiv7, #chartdiv8, #chartdiv9, #chartdiv10, #chartdiv11, #chartdiv12
+    height: 400px
+
+  .filter__slider
+    width: 350px  
 
 @media only screen and (max-width: 768px)
   h1, .h1, h2, .h2
@@ -333,9 +345,36 @@
       margin: 0 0 10px
       width: 100%
     .btn-group
-      width: 100%    
+      width: 100%
+
+  html, body
+    height: auto
+    min-height: 100%
+
+  .filter-box-range
+    flex-wrap: wrap
+
+  .filter__slider
+    width: 100%
+    margin: 20px 0 0    
+
+@media only screen and (max-width: 576px)
+  .content-row
+    align-items: flex-start
+    .btn-group .btn
+      width: 100%
+      margin: 0 0 10px
+      &:last-child
+        margin: 0
 
 @media only screen and (max-width: 480px)
+
+  .content-box-clients
+    .btn-group .btn
+      width: 100%
+      margin: 0 0 10px
+      &:last-child
+        margin: 0
 
 @media only screen and (max-width: 420px)
   .btn-group
@@ -371,7 +410,7 @@
     width: 100%
     input
       width: 100%
-      text-align: center      
+      text-align: center
 
 @media only screen and (max-width: 370px)
   .btn-filter

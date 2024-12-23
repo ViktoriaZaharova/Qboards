@@ -70,9 +70,6 @@
   .mb-55 {
     margin-bottom: 45px;
   }
-  html, body {
-    height: auto;
-  }
   .sign-modal {
     padding: 30px;
   }
@@ -170,6 +167,18 @@
   .filter-box-period-cabinet {
     margin: 10px 0 20px;
   }
+  .nav-tabs-pc {
+    display: none;
+  }
+  .filter-box-mobile {
+    display: flex;
+  }
+  .filter-wrapper-pc {
+    display: none !important;
+  }
+  .tabs-wrap .fade {
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 992px) {
   div.dt-container div.dt-paging {
@@ -242,6 +251,12 @@
   }
   .products-clients-table__item p {
     font-size: 20px;
+  }
+  #chartdiv4, #chartdiv7, #chartdiv8, #chartdiv9, #chartdiv10, #chartdiv11, #chartdiv12 {
+    height: 400px;
+  }
+  .filter__slider {
+    width: 350px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -348,6 +363,38 @@
   }
   .graphic-type .btn-group {
     width: 100%;
+  }
+  html, body {
+    height: auto;
+    min-height: 100%;
+  }
+  .filter-box-range {
+    flex-wrap: wrap;
+  }
+  .filter__slider {
+    width: 100%;
+    margin: 20px 0 0;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .content-row {
+    align-items: flex-start;
+  }
+  .content-row .btn-group .btn {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  .content-row .btn-group .btn:last-child {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .content-box-clients .btn-group .btn {
+    width: 100%;
+    margin: 0 0 10px;
+  }
+  .content-box-clients .btn-group .btn:last-child {
+    margin: 0;
   }
 }
 @media only screen and (max-width: 420px) {

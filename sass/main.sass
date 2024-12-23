@@ -119,7 +119,7 @@
 #chartdiv3
   height: 544px
 
-#chartdiv4
+#chartdiv4, #chartdiv7, #chartdiv8, #chartdiv9, #chartdiv10
   height: 580px
 
 #chartdiv5
@@ -127,6 +127,13 @@
 
 #chartdiv6
   height: 400px
+
+#chartdiv11
+  height: 500px
+
+#chartdiv12
+  height: 500px
+  margin: 40px 0 0    
 
 .filter-wrapper
   width: 100%
@@ -164,7 +171,7 @@
     transform: translate(0,-50%)
 
 .datepicker
-  padding: 20px
+  padding: 20px 45px 20px 20px
   border-radius: 20px
   background: #EAF3FF
   color: $blue
@@ -465,7 +472,7 @@ div.dt-container div.dt-paging ul.pagination
 .content-row
   width: 100%
   display: flex
-  align-items: center
+  align-items: flex-start
   // flex-wrap: wrap
   margin: 0 0 20px
   .form-search
@@ -570,6 +577,11 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
   width: 100%
   display: flex
   align-items: start
+  position: sticky
+  top: 0
+  z-index: 2
+  padding: 10px 0
+  background: #F6F7FA
 
 .graphic-type
   display: flex
@@ -586,6 +598,10 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
     &:hover
       background: $blue
       color: #fff
+    &:focus
+      color: #fff
+      background: $blue-hover
+      border-color: $blue-hover
 
 .filter-box-period-cabinet
   input
@@ -707,6 +723,29 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
 .content-box-filter
   p
     margin: 0 20px 0 0
+  a
+    &.btn-white
+      &:focus, &:hover
+        background: #fff
+        border-color: $blue
+        color: $black
+      &.active
+        background: $blue
+        color: #fff
+    &.btn-blue
+      &:hover, &:focus
+        background: $blue-hover
+        color: #fff
+      &.active
+        background: $blue
+        color: #fff
+    &.btn-green
+      &:hover, &:focus
+        background: #07AA69
+        color: #fff
+      &.active
+        background: $blue-hover
+        color: #fff
 
 // sign page
 .wrapper-sign
@@ -750,3 +789,82 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td
     width: fit-content
   .link
     margin: 20px auto 0
+
+// metrics page
+.content-metrics
+  .nav-tabs
+    margin-right: auto
+
+.filter__slider
+  margin: 0 0 0 30px
+  width: 500px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-wrap: wrap
+  font-family: $default-font
+  position: relative
+  z-index: 1
+  &::before, &::after
+    content: ''
+    position: absolute
+    width: 22px
+    height: 22px
+    border-radius: 50%
+    top: -5px
+    background: #EAF3FF
+  &::before
+    left: -5px
+  &::after
+    right: -5px    
+    
+  .ui-slider-handle
+    border-radius: 50%
+    border: none
+    width: 22px
+    height: 22px
+    min-width: 22px
+    box-shadow: none
+    cursor: pointer
+    background: $blue
+    color: $blue
+    &.ui-state-focus, &.ui-state-active
+      box-shadow: none
+      border: none
+    .value
+      top: 100%
+      position: absolute
+      z-index: 2
+      left: 50%
+      transform: translate(-50%,0)
+      margin: 5px auto 0
+      display: block  
+      font-size: 14px
+      font-family: $default-font
+      background: #F6F7FA
+  
+.ui-slider-range
+  background: $blue
+  border: none
+  border-radius: 6px 
+
+.range__zero, .range__total
+  color: $blue
+  font-size: 14px 
+  display: block
+  margin: 10px 0 0
+
+.range__total
+  text-align: right  
+
+#filter__range
+  width: 100%
+  order: -1   
+  border-radius: 6px
+  border: none
+  height: 12px
+  background: #EAF3FF
+
+
+.filter-box-mobile
+  display: none  

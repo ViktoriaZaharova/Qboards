@@ -314,7 +314,7 @@ am5.ready(function() {
   // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
   for (var i = 0; i < 10; i++) {
     var series = chart.series.push(am5xy.LineSeries.new(root, {
-      name: "Series " + i,
+      name: "Series",
       xAxis: xAxis,
       yAxis: yAxis,
       valueYField: "value",
@@ -325,6 +325,17 @@ am5.ready(function() {
         labelText: "{valueY}"
       })
     }));
+
+    series.data.setAll([{
+      category: "Research",
+      value: 1000
+    }, {
+      category: "Marketing",
+      value: 1200
+    }, {
+      category: "Sales",
+      value: 850
+    }]);
   
     date = new Date();
     date.setHours(0, 0, 0, 0);
