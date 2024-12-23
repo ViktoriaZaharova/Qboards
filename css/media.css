@@ -167,17 +167,12 @@
   .filter-box-period-cabinet {
     margin: 10px 0 20px;
   }
-  .nav-tabs-pc {
-    display: none;
+  .content-metrics .btn-filter {
+    width: 100%;
+    margin: 0 0 10px;
   }
-  .filter-box-mobile {
-    display: flex;
-  }
-  .filter-wrapper-pc {
-    display: none !important;
-  }
-  .tabs-wrap .fade {
-    opacity: 1;
+  .content-metrics .content-row {
+    flex-wrap: wrap;
   }
 }
 @media only screen and (max-width: 992px) {
