@@ -297,6 +297,11 @@ button:hover, button:focus, .btn:hover, .btn:focus {
 .btn-light-blue svg {
   fill: #0047AB;
 }
+.btn-light-blue.active {
+  background: #fff;
+  border: 1px solid #0047AB;
+  color: #0047AB;
+}
 
 .btn-white {
   background: #fff;
@@ -747,6 +752,27 @@ h1, .h1, h2, .h2 {
 .select-my:hover, .select-my:focus {
   background: #fff url("../img/select-table.svg") no-repeat calc(100% - 15px) center;
   background-size: 11px;
+}
+
+table .filters {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+table .filters th {
+  padding: 4px 0;
+}
+table .filters th:last-child .select-my {
+  border-right: none;
+}
+table .select-my {
+  border-radius: 0;
+  width: 100%;
+  border: none;
+  border-right: 1px solid gray;
+  background: #fff url("../img/select-table-gray.svg") no-repeat calc(100% - 15px) center !important;
+  background-size: 11px;
+  padding: 5px 7px;
+  height: 45px;
 }
 
 .form-search {

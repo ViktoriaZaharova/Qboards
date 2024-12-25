@@ -338,9 +338,6 @@ div.dt-container div.dt-search label {
 .table-striped thead th {
   padding: 22px 0;
 }
-.table-striped thead tr {
-  border-bottom: 1px solid #6DABFF;
-}
 .table-striped tbody tr {
   border-bottom: 1px solid #6DABFF;
 }
@@ -622,6 +619,9 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
 .content-box-reports .form-search {
   margin: 0;
 }
+.content-box-reports table th, .content-box-reports table td {
+  min-width: 150px;
+}
 
 .td-text {
   display: flex;
@@ -691,8 +691,8 @@ table.dataTable > thead > tr > th, table.dataTable > thead > tr > td {
 }
 
 .content-box-translation table th, .content-box-translation table td {
-  width: 120px;
-  min-width: 120px;
+  width: 150px;
+  min-width: 150px;
 }
 
 .dynamics-row {

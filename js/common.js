@@ -112,12 +112,9 @@ $('#example-table3').DataTable({
     search: '',
     url: 'js/ru.json'
   },
-
-  // ordering: false,
-  layout: false,
   paging: true,
   scrollCollapse: true,
-  scrollX: 'auto',
+  scrollX: true, // Исправлено на true
   layout: {
     topStart: {
       pageLength: true,
@@ -131,29 +128,38 @@ $('#example-table3').DataTable({
     bottomEnd: null
   },
   initComplete: function () {
-    this.api()
-      .columns()
-      .every(function () {
-        var column = this;
+    var table = this.api();
 
-        // Создание выпадающего списка select и обработчика событий
-        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
-          .appendTo($(column.footer()).empty())
-          .on('change', function () {
-            column
-              .search($(this).val(), { exact: true })
-              .draw();
-          });
+    // Удаление уже существующей строки фильтров, если она есть, чтобы избежать дублирования
+    table.table().container().querySelectorAll('tr.filters').forEach(row => row.remove());
 
-        // Добавление списка уникальных значений в options
-        column
-          .data()
-          .unique()
-          .sort()
-          .each(function (d, j) {
+    // Добавление строки для поиска под заголовками колонок
+    var filtersRow = $('<tr class="filters"></tr>').appendTo($(table.table().header()).parent());
+
+    table.columns().every(function () {
+      var column = this;
+
+      // Создание выпадающего списка select и обработчика событий
+      var select = $('<select class="select-my"><option>Поиск</option></select>')
+        .appendTo($('<th></th>').appendTo(filtersRow)) // Добавляем select в новую строку фильтров
+        .on('change', function () {
+          var val = $(this).val();
+          column
+            .search(val ? '^' + val + '$' : '', true, false)
+            .draw();
+        });
+
+      // Добавление списка уникальных значений в options
+      column
+        .data()
+        .unique()
+        .sort()
+        .each(function (d, j) {
+          if (d) { // Условие, чтобы избежать пустых значений
             select.append('<option value="' + d + '">' + d + '</option>');
-          });
-      });
+          }
+        });
+    });
   }
 });
 
@@ -183,29 +189,38 @@ $('#example-table3-1').DataTable({
     bottomEnd: null
   },
   initComplete: function () {
-    this.api()
-      .columns()
-      .every(function () {
-        var column = this;
+    var table = this.api();
 
-        // Создание выпадающего списка select и обработчика событий
-        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
-          .appendTo($(column.footer()).empty())
-          .on('change', function () {
-            column
-              .search($(this).val(), { exact: true })
-              .draw();
-          });
+    // Удаление уже существующей строки фильтров, если она есть, чтобы избежать дублирования
+    table.table().container().querySelectorAll('tr.filters').forEach(row => row.remove());
 
-        // Добавление списка уникальных значений в options
-        column
-          .data()
-          .unique()
-          .sort()
-          .each(function (d, j) {
+    // Добавление строки для поиска под заголовками колонок
+    var filtersRow = $('<tr class="filters"></tr>').appendTo($(table.table().header()).parent());
+
+    table.columns().every(function () {
+      var column = this;
+
+      // Создание выпадающего списка select и обработчика событий
+      var select = $('<select class="select-my"><option>Поиск</option></select>')
+        .appendTo($('<th></th>').appendTo(filtersRow)) // Добавляем select в новую строку фильтров
+        .on('change', function () {
+          var val = $(this).val();
+          column
+            .search(val ? '^' + val + '$' : '', true, false)
+            .draw();
+        });
+
+      // Добавление списка уникальных значений в options
+      column
+        .data()
+        .unique()
+        .sort()
+        .each(function (d, j) {
+          if (d) { // Условие, чтобы избежать пустых значений
             select.append('<option value="' + d + '">' + d + '</option>');
-          });
-      });
+          }
+        });
+    });
   }
 });
 
@@ -235,29 +250,38 @@ $('#example-table3-2').DataTable({
     bottomEnd: null
   },
   initComplete: function () {
-    this.api()
-      .columns()
-      .every(function () {
-        var column = this;
+    var table = this.api();
 
-        // Создание выпадающего списка select и обработчика событий
-        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
-          .appendTo($(column.footer()).empty())
-          .on('change', function () {
-            column
-              .search($(this).val(), { exact: true })
-              .draw();
-          });
+    // Удаление уже существующей строки фильтров, если она есть, чтобы избежать дублирования
+    table.table().container().querySelectorAll('tr.filters').forEach(row => row.remove());
 
-        // Добавление списка уникальных значений в options
-        column
-          .data()
-          .unique()
-          .sort()
-          .each(function (d, j) {
+    // Добавление строки для поиска под заголовками колонок
+    var filtersRow = $('<tr class="filters"></tr>').appendTo($(table.table().header()).parent());
+
+    table.columns().every(function () {
+      var column = this;
+
+      // Создание выпадающего списка select и обработчика событий
+      var select = $('<select class="select-my"><option>Поиск</option></select>')
+        .appendTo($('<th></th>').appendTo(filtersRow)) // Добавляем select в новую строку фильтров
+        .on('change', function () {
+          var val = $(this).val();
+          column
+            .search(val ? '^' + val + '$' : '', true, false)
+            .draw();
+        });
+
+      // Добавление списка уникальных значений в options
+      column
+        .data()
+        .unique()
+        .sort()
+        .each(function (d, j) {
+          if (d) { // Условие, чтобы избежать пустых значений
             select.append('<option value="' + d + '">' + d + '</option>');
-          });
-      });
+          }
+        });
+    });
   }
 });
 
@@ -287,29 +311,38 @@ $('#example-table4').DataTable({
     bottomEnd: null
   },
   initComplete: function () {
-    this.api()
-      .columns()
-      .every(function () {
-        var column = this;
+    var table = this.api();
 
-        // Создание выпадающего списка select и обработчика событий
-        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
-          .appendTo($(column.footer()).empty())
-          .on('change', function () {
-            column
-              .search($(this).val(), { exact: true })
-              .draw();
-          });
+    // Удаление уже существующей строки фильтров, если она есть, чтобы избежать дублирования
+    table.table().container().querySelectorAll('tr.filters').forEach(row => row.remove());
 
-        // Добавление списка уникальных значений в options
-        column
-          .data()
-          .unique()
-          .sort()
-          .each(function (d, j) {
+    // Добавление строки для поиска под заголовками колонок
+    var filtersRow = $('<tr class="filters"></tr>').appendTo($(table.table().header()).parent());
+
+    table.columns().every(function () {
+      var column = this;
+
+      // Создание выпадающего списка select и обработчика событий
+      var select = $('<select class="select-my"><option>Поиск</option></select>')
+        .appendTo($('<th></th>').appendTo(filtersRow)) // Добавляем select в новую строку фильтров
+        .on('change', function () {
+          var val = $(this).val();
+          column
+            .search(val ? '^' + val + '$' : '', true, false)
+            .draw();
+        });
+
+      // Добавление списка уникальных значений в options
+      column
+        .data()
+        .unique()
+        .sort()
+        .each(function (d, j) {
+          if (d) { // Условие, чтобы избежать пустых значений
             select.append('<option value="' + d + '">' + d + '</option>');
-          });
-      });
+          }
+        });
+    });
   }
 });
 
@@ -339,29 +372,38 @@ $('#example-table5').DataTable({
     bottomEnd: null
   },
   initComplete: function () {
-    this.api()
-      .columns()
-      .every(function () {
-        var column = this;
+    var table = this.api();
 
-        // Создание выпадающего списка select и обработчика событий
-        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
-          .appendTo($(column.footer()).empty())
-          .on('change', function () {
-            column
-              .search($(this).val(), { exact: true })
-              .draw();
-          });
+    // Удаление уже существующей строки фильтров, если она есть, чтобы избежать дублирования
+    table.table().container().querySelectorAll('tr.filters').forEach(row => row.remove());
 
-        // Добавление списка уникальных значений в options
-        column
-          .data()
-          .unique()
-          .sort()
-          .each(function (d, j) {
+    // Добавление строки для поиска под заголовками колонок
+    var filtersRow = $('<tr class="filters"></tr>').appendTo($(table.table().header()).parent());
+
+    table.columns().every(function () {
+      var column = this;
+
+      // Создание выпадающего списка select и обработчика событий
+      var select = $('<select class="select-my"><option>Поиск</option></select>')
+        .appendTo($('<th></th>').appendTo(filtersRow)) // Добавляем select в новую строку фильтров
+        .on('change', function () {
+          var val = $(this).val();
+          column
+            .search(val ? '^' + val + '$' : '', true, false)
+            .draw();
+        });
+
+      // Добавление списка уникальных значений в options
+      column
+        .data()
+        .unique()
+        .sort()
+        .each(function (d, j) {
+          if (d) { // Условие, чтобы избежать пустых значений
             select.append('<option value="' + d + '">' + d + '</option>');
-          });
-      });
+          }
+        });
+    });
   }
 });
 
@@ -392,29 +434,38 @@ $('#example-table6').DataTable({
     bottomEnd: null
   },
   initComplete: function () {
-    this.api()
-      .columns()
-      .every(function () {
-        var column = this;
+    var table = this.api();
 
-        // Создание выпадающего списка select и обработчика событий
-        var select = $('<select class="select-my"><option value="Поиск">Поиск</option></select>')
-          .appendTo($(column.footer()).empty())
-          .on('change', function () {
-            column
-              .search($(this).val(), { exact: true })
-              .draw();
-          });
+    // Удаление уже существующей строки фильтров, если она есть, чтобы избежать дублирования
+    table.table().container().querySelectorAll('tr.filters').forEach(row => row.remove());
 
-        // Добавление списка уникальных значений в options
-        column
-          .data()
-          .unique()
-          .sort()
-          .each(function (d, j) {
+    // Добавление строки для поиска под заголовками колонок
+    var filtersRow = $('<tr class="filters"></tr>').appendTo($(table.table().header()).parent());
+
+    table.columns().every(function () {
+      var column = this;
+
+      // Создание выпадающего списка select и обработчика событий
+      var select = $('<select class="select-my"><option>Поиск</option></select>')
+        .appendTo($('<th></th>').appendTo(filtersRow)) // Добавляем select в новую строку фильтров
+        .on('change', function () {
+          var val = $(this).val();
+          column
+            .search(val ? '^' + val + '$' : '', true, false)
+            .draw();
+        });
+
+      // Добавление списка уникальных значений в options
+      column
+        .data()
+        .unique()
+        .sort()
+        .each(function (d, j) {
+          if (d) { // Условие, чтобы избежать пустых значений
             select.append('<option value="' + d + '">' + d + '</option>');
-          });
-      });
+          }
+        });
+    });
   }
 });
 
